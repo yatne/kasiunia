@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
-import styles from './styles/global.scss'
+} from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
+import styles from './styles/global.scss';
 
-import Navigation from "./components/Navigation/Navigation";
-import LandingPage from "./pages/LandingPage";
+import Navigation from './components/Navigation/Navigation';
+import LandingPage from './pages/LandingPage';
 
 export default function App() {
   return (
