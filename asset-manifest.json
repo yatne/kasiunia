@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kasiunia/static/css/main.cfd03eff.chunk.css",
-    "main.js": "/kasiunia/static/js/main.a5e7e2c2.chunk.js",
-    "main.js.map": "/kasiunia/static/js/main.a5e7e2c2.chunk.js.map",
+    "main.js": "/kasiunia/static/js/main.0514b068.chunk.js",
+    "main.js.map": "/kasiunia/static/js/main.0514b068.chunk.js.map",
     "runtime-main.js": "/kasiunia/static/js/runtime-main.941f41e8.js",
     "runtime-main.js.map": "/kasiunia/static/js/runtime-main.941f41e8.js.map",
     "static/js/2.4533f8b4.chunk.js": "/kasiunia/static/js/2.4533f8b4.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.941f41e8.js",
     "static/js/2.4533f8b4.chunk.js",
     "static/css/main.cfd03eff.chunk.css",
-    "static/js/main.a5e7e2c2.chunk.js"
+    "static/js/main.0514b068.chunk.js"
   ]
 }
