@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/kasiunia/static/css/main.cfd03eff.chunk.css",
-    "main.js": "/kasiunia/static/js/main.0514b068.chunk.js",
-    "main.js.map": "/kasiunia/static/js/main.0514b068.chunk.js.map",
-    "runtime-main.js": "/kasiunia/static/js/runtime-main.941f41e8.js",
-    "runtime-main.js.map": "/kasiunia/static/js/runtime-main.941f41e8.js.map",
-    "static/js/2.4533f8b4.chunk.js": "/kasiunia/static/js/2.4533f8b4.chunk.js",
-    "static/js/2.4533f8b4.chunk.js.map": "/kasiunia/static/js/2.4533f8b4.chunk.js.map",
-    "static/js/3.acd202d5.chunk.js": "/kasiunia/static/js/3.acd202d5.chunk.js",
-    "static/js/3.acd202d5.chunk.js.map": "/kasiunia/static/js/3.acd202d5.chunk.js.map",
-    "index.html": "/kasiunia/index.html",
-    "static/css/main.cfd03eff.chunk.css.map": "/kasiunia/static/css/main.cfd03eff.chunk.css.map",
-    "static/js/2.4533f8b4.chunk.js.LICENSE.txt": "/kasiunia/static/js/2.4533f8b4.chunk.js.LICENSE.txt",
-    "static/media/logo.bb4ac049.png": "/kasiunia/static/media/logo.bb4ac049.png",
-    "static/media/stolat.cdfb6dd0.png": "/kasiunia/static/media/stolat.cdfb6dd0.png",
-    "static/media/urodziny.f21c1faf.mp3": "/kasiunia/static/media/urodziny.f21c1faf.mp3"
+    "main.css": "/static/css/main.cfd03eff.chunk.css",
+    "main.js": "/static/js/main.0514b068.chunk.js",
+    "main.js.map": "/static/js/main.0514b068.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.35147a07.js",
+    "runtime-main.js.map": "/static/js/runtime-main.35147a07.js.map",
+    "static/js/2.f2314b6a.chunk.js": "/static/js/2.f2314b6a.chunk.js",
+    "static/js/2.f2314b6a.chunk.js.map": "/static/js/2.f2314b6a.chunk.js.map",
+    "static/js/3.acd202d5.chunk.js": "/static/js/3.acd202d5.chunk.js",
+    "static/js/3.acd202d5.chunk.js.map": "/static/js/3.acd202d5.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.cfd03eff.chunk.css.map": "/static/css/main.cfd03eff.chunk.css.map",
+    "static/js/2.f2314b6a.chunk.js.LICENSE.txt": "/static/js/2.f2314b6a.chunk.js.LICENSE.txt",
+    "static/media/logo.bb4ac049.png": "/static/media/logo.bb4ac049.png",
+    "static/media/stolat.cdfb6dd0.png": "/static/media/stolat.cdfb6dd0.png",
+    "static/media/urodziny.f21c1faf.mp3": "/static/media/urodziny.f21c1faf.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.941f41e8.js",
-    "static/js/2.4533f8b4.chunk.js",
+    "static/js/runtime-main.35147a07.js",
+    "static/js/2.f2314b6a.chunk.js",
     "static/css/main.cfd03eff.chunk.css",
     "static/js/main.0514b068.chunk.js"
   ]
