@@ -1,20 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../../static/img/logo.png';
 
-const Navigation = () => (
-  <Nav>
-    <Link to="/">
-      <Logo src={logo} />
-    </Link>
-    <Link to="/quiz">
-      <NavItem className="selected">
-        QUIZ
-      </NavItem>
-    </Link>
-  </Nav>
-);
+const Navigation = () => {
+  const location = useLocation();
+  return (
+    <Nav>
+      <Link to="/">
+        <Logo src={logo} />
+      </Link>
+      <Link to="/quiz">
+        <NavItem className={location.pathname === '/quiz' ? 'selected' : ''}>
+          QUIZ
+        </NavItem>
+      </Link>
+    </Nav>
+  );
+};
 
 const Logo = styled.img`
   width: 100px;
