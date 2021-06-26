@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && echo \"kasiunia.com.pl\" > ./build/CNAME",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
