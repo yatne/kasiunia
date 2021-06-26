@@ -1,5 +1,7 @@
 import React from 'react';
-import Layaout from '../components/Layout/Layaout';
+import styled from 'styled-components';
+
+import Layaout from '../components/Layout/Layout';
 import stolat from '../../static/img/stolat.png';
 import urodziny from '../../static/audio/urodziny.mp3';
 
@@ -8,9 +10,13 @@ const LandingPage = () => (
     <audio controls autoPlay>
       <source src={urodziny} />
     </audio>
-    <img src={stolat} alt="sto lat!" />
+    <StolatImage src={stolat} alt="sto lat!" />
   </Layaout>
 );
+
+const StolatImage = styled.img`
+  width: 100%;
+`;
 
 LandingPage.propTypes = {};
 

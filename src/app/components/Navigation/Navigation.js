@@ -5,8 +5,13 @@ import logo from '../../../static/img/logo.png';
 
 const Navigation = () => (
   <Nav>
-    <Link to="/home">
+    <Link to="/">
       <Logo src={logo} />
+    </Link>
+    <Link to="/quiz">
+      <NavItem className="selected">
+        QUIZ
+      </NavItem>
     </Link>
   </Nav>
 );
@@ -21,9 +26,21 @@ const Logo = styled.img`
 `;
 
 const Nav = styled.nav`
-  display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 100px;
+`;
+
+const NavItem = styled.div`
+  font-weight: bold;
+  background-color: aquamarine;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 1.1rem;
+  
+  &.selected {
+    background-color: seagreen;
+  }
 `;
 
 export default Navigation;
