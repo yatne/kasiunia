@@ -1,7 +1,7 @@
 import React from 'react';
 import Layaout from '../components/Layout/Layaout';
-import stolat from '../static/img/stolat.png';
-import urodziny from '../static/audio/urodziny.mp3';
+import stolat from '../../static/img/stolat.png';
+import urodziny from '../../static/audio/urodziny.mp3';
 
 const LandingPage = () => (
   <Layaout>

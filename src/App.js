@@ -7,15 +7,20 @@ import {
 // eslint-disable-next-line no-unused-vars
 import styles from './styles/global.scss';
 
-import Navigation from './components/Navigation/Navigation';
-import LandingPage from './pages/LandingPage';
+import Navigation from './app/components/Navigation/Navigation';
+import LandingPage from './app/pages/LandingPage';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navigation />
       <div>
         <Switch>
+          <Route path="/home">
+            <div>
+              Home
+            </div>
+          </Route>
           <Route path="/">
             <LandingPage />
           </Route>
