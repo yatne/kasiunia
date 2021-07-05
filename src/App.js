@@ -12,7 +12,7 @@ import Navigation from './app/components/Navigation/Navigation';
 import LandingPage from './app/pages/LandingPage';
 import DesktopOnlyPage from './app/pages/DesktopOnlyPage';
 import QuizPage from './app/pages/QuizPage';
-import reducer from './redux/reducer';
+import reducer from './app/redux/reducer';
 // eslint-disable-next-line no-unused-vars
 import styles from './styles/global.scss';
 
