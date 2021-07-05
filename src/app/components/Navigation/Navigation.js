@@ -1,20 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import logo from '../../../static/img/logo.png';
 
 const Navigation = () => {
   const location = useLocation();
+  const quizUnlocked = useSelector((state) => state.quizUnlocked);
   return (
     <Nav>
       <Link to="/">
         <Logo src={logo} />
       </Link>
-      <Link to="/quiz">
-        <NavItem className={location.pathname === '/quiz' ? 'selected' : ''}>
-          QUIZ
-        </NavItem>
-      </Link>
+      {quizUnlocked && (
+        <Link to="/quiz">
+          <NavItem className={location.pathname === '/quiz' ? 'selected' : ''}>
+            QUIZ
+          </NavItem>
+        </Link>
+      )}
     </Nav>
   );
 };

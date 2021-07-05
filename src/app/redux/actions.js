@@ -1,9 +1,9 @@
-import { AUTHORIZE, UNAUTHORIZE } from './constants';
+import { UNLOCK_QUIZ } from './constants';
 
-export const Authorize = () => ({
-  type: AUTHORIZE,
+export const unlockQuiz = () => ({
+  type: UNLOCK_QUIZ,
 });
 
-export const Unauthorize = () => ({
-  type: UNAUTHORIZE,
+export const unlockQuizz = () => ({
+  type: UNLOCK_QUIZ,
 });

@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Layaout from '../components/Layout/Layout';
 import stolat from '../../static/img/stolat.png';
 import urodziny from '../../static/audio/urodziny.mp3';
+import QuizInput from '../components/QuizInput/QuizInput';
+import { unlockQuiz } from '../redux/actions';
 
 const LandingPage = () => {
-  const isAuthorized = useSelector((state) => state.authorized);
+  const dispatch = useDispatch();
 
   return (
     <Layaout>
@@ -15,7 +17,7 @@ const LandingPage = () => {
         <source src={urodziny} />
       </audio>
       <StolatImage src={stolat} alt="sto lat!" />
-      {isAuthorized && (<div>Bingo!</div>)}
+      <QuizInput onCorrectAnswer={() => dispatch(unlockQuiz())} answer="3214789" />
     </Layaout>
   );
 };

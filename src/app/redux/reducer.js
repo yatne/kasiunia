@@ -1,15 +1,13 @@
-import { AUTHORIZE, UNAUTHORIZE } from './constants';
+import { UNLOCK_QUIZ } from './constants';
 
 const initialState = {
-  authorized: false,
+  quizUnlocked: false,
 };
 
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
-    case AUTHORIZE:
-      return { authorized: true };
-    case UNAUTHORIZE:
-      return { authorized: false };
+    case UNLOCK_QUIZ:
+      return { quizUnlocked: true };
     default:
       return state;
   }
