@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const QuizInput = ({ answer, onCorrectAnswer, onlyNumbers }) => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
 
   const handleChange = (e) => {
     e.preventDefault();

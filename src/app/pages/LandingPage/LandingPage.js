@@ -20,7 +20,7 @@ const LandingPage = () => {
   const [showBelowFold, setShowBelowFold] = useState(false);
 
   const handlePlay = (bool) => {
-    const timeout = bool ? 6000 : 0;
+    const timeout = bool ? 5000 : 0;
     setPlayed(bool);
     setTimeout(() => {
       setShowBelowFold(bool);
@@ -40,10 +40,18 @@ const LandingPage = () => {
       </div>
       <div className={showBelowFold ? 'landing-page-below-fold' : 'display-none'}>
         <QuizQuestion question="odblokuj quiz!: " onCorrectAnswer={() => dispatch(unlockQuiz())} answer="3214789" onlyNumbers />
+        <HiddenHint>tak jak telefon.</HiddenHint>
       </div>
     </Layout>
   );
 };
+
+const HiddenHint = styled.div`
+  position: absolute;
+  bottom: 33px;
+  left: 173px;
+  color: white;
+`;
 
 const StolatImage = styled.img`
   width: 100%;
