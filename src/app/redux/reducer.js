@@ -1,7 +1,7 @@
 import { UNLOCK_QUIZ } from './constants';
 
 const initialState = {
-  quizUnlocked: false,
+  quizUnlocked: window.localStorage.getItem('quizUnlocked') || false,
 };
 
 export default function appReducer(state = initialState, action) {
