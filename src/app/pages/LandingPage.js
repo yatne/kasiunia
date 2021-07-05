@@ -17,7 +17,7 @@ const LandingPage = () => {
         <source src={urodziny} />
       </audio>
       <StolatImage src={stolat} alt="sto lat!" />
-      <QuizInput onCorrectAnswer={() => dispatch(unlockQuiz())} answer="3214789" />
+      <QuizInput onCorrectAnswer={() => dispatch(unlockQuiz())} answer="3214789" onlyNumbers />
     </Layaout>
   );
 };
