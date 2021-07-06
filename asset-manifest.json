@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.f28a06d2.chunk.css",
-    "main.js": "/static/js/main.e4c8cf6b.chunk.js",
-    "main.js.map": "/static/js/main.e4c8cf6b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0794d036.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0794d036.js.map",
-    "static/js/2.3b5a2ceb.chunk.js": "/static/js/2.3b5a2ceb.chunk.js",
-    "static/js/2.3b5a2ceb.chunk.js.map": "/static/js/2.3b5a2ceb.chunk.js.map",
-    "static/js/3.0edfa126.chunk.js": "/static/js/3.0edfa126.chunk.js",
-    "static/js/3.0edfa126.chunk.js.map": "/static/js/3.0edfa126.chunk.js.map",
+    "main.css": "/static/css/main.7746448c.chunk.css",
+    "main.js": "/static/js/main.ec1b9cb6.chunk.js",
+    "main.js.map": "/static/js/main.ec1b9cb6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b4dca50f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b4dca50f.js.map",
+    "static/js/2.7bffc822.chunk.js": "/static/js/2.7bffc822.chunk.js",
+    "static/js/2.7bffc822.chunk.js.map": "/static/js/2.7bffc822.chunk.js.map",
+    "static/js/3.a9772ad1.chunk.js": "/static/js/3.a9772ad1.chunk.js",
+    "static/js/3.a9772ad1.chunk.js.map": "/static/js/3.a9772ad1.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.f28a06d2.chunk.css.map": "/static/css/main.f28a06d2.chunk.css.map",
-    "static/js/2.3b5a2ceb.chunk.js.LICENSE.txt": "/static/js/2.3b5a2ceb.chunk.js.LICENSE.txt",
+    "static/css/main.7746448c.chunk.css.map": "/static/css/main.7746448c.chunk.css.map",
+    "static/js/2.7bffc822.chunk.js.LICENSE.txt": "/static/js/2.7bffc822.chunk.js.LICENSE.txt",
     "static/media/kasiakasia.b4f888c2.png": "/static/media/kasiakasia.b4f888c2.png",
+    "static/media/global.scss": "/static/media/kwiaty-tlo.34deb708.jpeg",
     "static/media/kwiaty.e29b8332.jpeg": "/static/media/kwiaty.e29b8332.jpeg",
     "static/media/logo.bb4ac049.png": "/static/media/logo.bb4ac049.png",
     "static/media/ptasie-mleczko.7fe68c82.png": "/static/media/ptasie-mleczko.7fe68c82.png",
@@ -20,9 +21,9 @@
     "static/media/urodziny.f21c1faf.mp3": "/static/media/urodziny.f21c1faf.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.0794d036.js",
-    "static/js/2.3b5a2ceb.chunk.js",
-    "static/css/main.f28a06d2.chunk.css",
-    "static/js/main.e4c8cf6b.chunk.js"
+    "static/js/runtime-main.b4dca50f.js",
+    "static/js/2.7bffc822.chunk.js",
+    "static/css/main.7746448c.chunk.css",
+    "static/js/main.ec1b9cb6.chunk.js"
   ]
 }
