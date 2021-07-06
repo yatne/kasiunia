@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { setOpenedTab } from '../../redux/actions';
@@ -10,16 +11,63 @@ const Tabs = ({ page, tabs }) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <ul>
-        {/* eslint-disable-next-line max-len */}
-        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions,max-len */}
-        {tabs.map((tab) => <li onClick={() => dispatch(setOpenedTab(page, tab.id))}>{tab.label}</li>)}
-      </ul>
+    <TabsContainer>
+      <TabsNavigation>
+        {tabs.map((tab) => (
+          <TabsNavItem
+            className="disabled"
+            key={tab.id}
+            onClick={() => dispatch(setOpenedTab(page, tab.id))}
+          >
+            {tab.label}
+          </TabsNavItem>
+        ))}
+      </TabsNavigation>
       <TabComponent />
-    </div>
+    </TabsContainer>
   );
 };
+
+const TabsContainer = styled.div`
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 60px;
+  width: 900px;
+  background-color: #fdfdfd;
+  box-shadow: 1px 2px #dddddd;
+`;
+
+const TabsNavigation = styled.ul`
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+`;
+
+const TabsNavItem = styled.li`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  align-items: center;
+  height: 32px;
+  
+  &:last-child {
+    border-right: none;
+  }
+  
+  &.disabled {
+    background-color: #eeeeee;
+  }
+  
+  &.selected {
+    border-bottom: none;
+  }
+`;
 
 Tabs.propTypes = {
   page: PropTypes.string.isRequired,
