@@ -3,7 +3,7 @@ $minimalScreenSize: 1000px;
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import "a-reset";
 body {
-   background-color: #ffd8ef;
+   background: url("../static/img/kwiaty-tlo.jpeg") repeat;
    font-family: 'Lato', sans-serif;
    box-sizing: border-box;
 }

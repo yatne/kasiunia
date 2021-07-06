@@ -6,18 +6,25 @@ import { setOpenedTab } from '../../redux/actions';
 
 const Tabs = ({ page, tabs }) => {
   const selectedTabId = useSelector((state) => state.selectedTabs[page]);
+  const unlockedTabs = useSelector((state) => state.unlockedTabs[page]);
   const TabComponent = tabs.find((tab) => tab.id === selectedTabId).component;
 
   const dispatch = useDispatch();
+
+  const handleClick = (pageId, tabId) => {
+    if (unlockedTabs.includes(tabId)) {
+      dispatch(setOpenedTab(pageId, tabId));
+    }
+  };
 
   return (
     <TabsContainer>
       <TabsNavigation>
         {tabs.map((tab) => (
           <TabsNavItem
-            className="disabled"
+            className={`${selectedTabId === tab.id ? 'selected' : ''} ${unlockedTabs.includes(tab.id) ? '' : 'disabled'}`}
             key={tab.id}
-            onClick={() => dispatch(setOpenedTab(page, tab.id))}
+            onClick={() => handleClick(page, tab.id)}
           >
             {tab.label}
           </TabsNavItem>
@@ -55,6 +62,7 @@ const TabsNavItem = styled.li`
   border-bottom: 1px solid #dddddd;
   align-items: center;
   height: 32px;
+  cursor: pointer;
   
   &:last-child {
     border-right: none;
@@ -62,10 +70,13 @@ const TabsNavItem = styled.li`
   
   &.disabled {
     background-color: #eeeeee;
+    cursor: auto;
+    color: grey;
   }
   
   &.selected {
-    border-bottom: none;
+    border-bottom: 1px solid #fdfdfd;
+    color: seagreen;
   }
 `;
 

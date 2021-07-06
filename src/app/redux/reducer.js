@@ -7,6 +7,9 @@ const initialState = {
   selectedTabs: {
     [QUIZ_PAGE_TABS]: GENERAL_KNOWLEDGE_TAB,
   },
+  unlockedTabs: {
+    [QUIZ_PAGE_TABS]: window.localStorage.getItem(`${QUIZ_PAGE_TABS}-unlocked-tabs`) || [GENERAL_KNOWLEDGE_TAB],
+  },
 };
 
 export default function appReducer(state = initialState, action) {
