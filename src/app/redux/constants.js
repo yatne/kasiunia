@@ -1,3 +1,7 @@
 export const UNLOCK_QUIZ = 'UNLOCK_QUIZ';
-export const UNAUTHORIZE = 'UNAUTHORIZE';
-export const QUIZ_TAB_1 = 'QUIZ_TAB_1';
+export const SET_SELECTED_TAB = 'SET_SELECTED_TAB';
+
+export const GENERAL_KNOWLEDGE_TAB = 'GENERAL_KNOWLEDGE_TAB';
+export const GEOGRAPHIC_TAB = 'GEOGRAPHIC_TAB';
+
+export const QUIZ_PAGE_TABS = 'QUIZ_PAGE_TABS';

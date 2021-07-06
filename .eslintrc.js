@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 'off',
     'jsx-a11y/media-has-caption': 'off',
+    'import/named': 'off',
   },
 };
