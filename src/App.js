@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import Navigation from './app/components/Navigation/Navigation';
 import LandingPage from './app/pages/LandingPage/LandingPage';
 import DesktopOnlyPage from './app/pages/DesktopOnlyPage';
-import QuizPage from './app/pages/QuizPage';
+import QuizPage from './app/pages/QuizPage/QuizPage';
 import reducer from './app/redux/reducer';
 import './styles/global.scss';
 

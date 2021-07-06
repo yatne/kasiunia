@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import QuizInput from '../components/QuizInput/QuizInput';
+import Layout from '../../components/Layout/Layout';
+import Tabs from '../../components/Tabs/Tabs';
+import GeneralKnowledgeTab from './GeneralKnowledgeTab';
 
 const QuizPage = () => {
   const quizUnlocked = useSelector((state) => state.quizUnlocked);
@@ -12,13 +14,16 @@ const QuizPage = () => {
       history.push('/');
     }
   }, []);
-  return (
-    <div>
-      quiz
-      <QuizInput onCorrectAnswer={() => { console.log('jaha'); }} answer="pupa" />
-      <QuizInput onCorrectAnswer={() => { console.log('123'); }} answer="1234.4321" onlyNumbers />
 
-    </div>
+  const tabs = [
+    { label: 'Wiedza ogólna', component: GeneralKnowledgeTab },
+    { label: 'Geografia', component: GeneralKnowledgeTab },
+  ];
+
+  return (
+    <Layout>
+      <Tabs tabs={tabs} />
+    </Layout>
   );
 };
 
