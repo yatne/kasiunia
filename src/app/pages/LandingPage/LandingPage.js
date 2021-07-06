@@ -39,7 +39,7 @@ const LandingPage = () => {
         <PtasieMleczkoImage src={ptasiemleczko} alt="ptasie mleczko" />
       </div>
       <div className={showBelowFold ? 'landing-page-below-fold' : 'display-none'}>
-        <QuizQuestion question="odblokuj quiz!: " onCorrectAnswer={() => dispatch(unlockQuiz())} answer="3214789" onlyNumbers />
+        <QuizQuestion question="odblokuj quiz!: " onCorrectAnswer={() => dispatch(unlockQuiz())} answer="3214789" onlyNumbers singular />
         <HiddenHint>tak jak telefon.</HiddenHint>
       </div>
     </Layout>

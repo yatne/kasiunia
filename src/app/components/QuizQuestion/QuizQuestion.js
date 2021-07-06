@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import QuizInput from '../QuizInput/QuizInput';
 
 const QuizQuestion = ({
-  question, answer, onCorrectAnswer, onlyNumbers,
+  question, answer, onCorrectAnswer, onlyNumbers, singular,
 }) => (
-  <QuestionContainer>
+  <QuestionContainer singular={singular}>
     <Question>{question}</Question>
     <QuizInput onCorrectAnswer={onCorrectAnswer} answer={answer} onlyNumbers={onlyNumbers} />
   </QuestionContainer>
@@ -18,7 +18,7 @@ const QuestionContainer = styled.div`
   justify-content: space-around;
   padding: 20px;
   background-color: white;
-  box-shadow: 1px 2px #dddddd;
+  ${(props) => (props.singular ? 'box-shadow: 1px 2px #dddddd;' : 'border: 1px solid black')};
   margin: 30px;
   border-radius: 2px;
 `;
@@ -33,10 +33,12 @@ QuizQuestion.propTypes = {
   answer: PropTypes.string.isRequired,
   onCorrectAnswer: PropTypes.func.isRequired,
   onlyNumbers: PropTypes.bool,
+  singular: PropTypes.bool,
 };
 
 QuizQuestion.defaultProps = {
   onlyNumbers: false,
+  singular: false,
 };
 
 export default QuizQuestion;
