@@ -17,12 +17,15 @@ export const setOpenedTab = (page, tab) => ({
   },
 });
 
-export const unlockTab = (tab) => ({
-  type: UNLOCK_TAB,
-  payload: {
-    tab,
-  },
-});
+export const unlockTab = (tab, unlockedTabs) => {
+  window.localStorage.setItem('unlocked-tabs', JSON.stringify(unlockedTabs.concat([tab])));
+  return {
+    type: UNLOCK_TAB,
+    payload: {
+      tab,
+    },
+  };
+};
 
 export const setAnswer = (questionId, answer) => ({
   type: SET_ANSWER,
@@ -38,8 +41,4 @@ export const setQuizStage = (tab, stage) => ({
     tab,
     stage,
   },
-});
-
-export const unlockQuizz = () => ({
-  type: UNLOCK_QUIZ,
 });

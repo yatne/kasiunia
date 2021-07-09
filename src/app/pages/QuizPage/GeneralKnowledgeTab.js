@@ -15,8 +15,7 @@ const GeneralKnowledgeTab = () => {
       dispatch(setQuizStage(GENERAL_KNOWLEDGE_TAB, questionNr));
     }
     if (questionNr === 4) {
-      window.localStorage.setItem('unlocked-tabs', JSON.stringify(unlockedTabs.concat([GEOGRAPHIC_TAB])));
-      dispatch(unlockTab(GEOGRAPHIC_TAB));
+      dispatch(unlockTab(GEOGRAPHIC_TAB, unlockedTabs));
     }
   };
 
@@ -60,6 +59,7 @@ const GeneralKnowledgeTab = () => {
 };
 
 const Header = styled.h2`
+  text-align: center;
   width: 50%;
   margin-right: auto;
   margin-left: auto;
