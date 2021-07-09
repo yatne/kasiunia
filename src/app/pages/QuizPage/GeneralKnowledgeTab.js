@@ -18,6 +18,7 @@ const GeneralKnowledgeTab = () => {
         <QuizQuestion
           question="Jak się nazywa najmłodszy piesek z Psiego Patrolu?"
           onCorrectAnswer={() => handleCorrectAnswer(1)}
+          correct={unlockedQuestion >= 1}
           answer="Rubble"
         />
         { unlockedQuestion >= 1 && (
@@ -25,6 +26,7 @@ const GeneralKnowledgeTab = () => {
             question="aa"
             onCorrectAnswer={() => handleCorrectAnswer(2)}
             answer="12"
+            correct={unlockedQuestion >= 2}
           />
         )}
         { unlockedQuestion >= 2 && (
@@ -32,6 +34,7 @@ const GeneralKnowledgeTab = () => {
             question="aa"
             onCorrectAnswer={() => handleCorrectAnswer(3)}
             answer="12"
+            correct={unlockedQuestion >= 3}
           />
         )}
         { unlockedQuestion >= 3 && (
@@ -39,6 +42,7 @@ const GeneralKnowledgeTab = () => {
             question="aa"
             onCorrectAnswer={() => handleCorrectAnswer(4)}
             answer="12"
+            correct={unlockedQuestion >= 4}
           />
         )}
       </div>

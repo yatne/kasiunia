@@ -50,7 +50,7 @@ const HiddenHint = styled.div`
   position: absolute;
   bottom: 33px;
   left: 173px;
-  color: white;
+  color: #fafafb;
 `;
 
 const StolatImage = styled.img`
