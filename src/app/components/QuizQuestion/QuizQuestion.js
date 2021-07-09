@@ -17,7 +17,12 @@ const QuizQuestion = ({
   return (
     <QuestionContainer borderStyle={style}>
       <Question>{question}</Question>
-      <QuizInput onCorrectAnswer={onCorrectAnswer} answer={answer} onlyNumbers={onlyNumbers} />
+      <QuizInput
+        onCorrectAnswer={onCorrectAnswer}
+        answer={answer}
+        onlyNumbers={onlyNumbers}
+        questionId={question.substring(0, 15)}
+      />
     </QuestionContainer>
   );
 };

@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAnswer } from '../../redux/actions';
 
-const QuizInput = ({ answer, onCorrectAnswer, onlyNumbers }) => {
-  const [value, setValue] = useState('');
+const QuizInput = ({
+  answer, onCorrectAnswer, onlyNumbers, questionId,
+}) => {
+  const dispatch = useDispatch();
+  const value = useSelector((state) => state.quizAnswers[questionId] || '');
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -10,7 +15,7 @@ const QuizInput = ({ answer, onCorrectAnswer, onlyNumbers }) => {
     const isNumbersOnly = /^[0-9,.]*$/.test(newValue);
 
     if (isNumbersOnly || !onlyNumbers) {
-      setValue(newValue);
+      dispatch(setAnswer(questionId, newValue));
       if (newValue.toLowerCase() === answer.toLowerCase()) {
         onCorrectAnswer();
       }
@@ -26,6 +31,7 @@ QuizInput.propTypes = {
   answer: PropTypes.string.isRequired,
   onCorrectAnswer: PropTypes.func.isRequired,
   onlyNumbers: PropTypes.bool,
+  questionId: PropTypes.string.isRequired,
 };
 
 QuizInput.defaultProps = {

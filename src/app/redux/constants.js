@@ -1,5 +1,7 @@
 export const UNLOCK_QUIZ = 'UNLOCK_QUIZ';
 export const SET_SELECTED_TAB = 'SET_SELECTED_TAB';
+export const SET_ANSWER = 'SET_ANSWER';
+export const SET_QUIZ_STAGE = 'SET_QUIZ_STAGE';
 
 export const GENERAL_KNOWLEDGE_TAB = 'GENERAL_KNOWLEDGE_TAB';
 export const GEOGRAPHIC_TAB = 'GEOGRAPHIC_TAB';
