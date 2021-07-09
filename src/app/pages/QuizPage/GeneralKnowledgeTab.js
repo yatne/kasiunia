@@ -2,16 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
-import { GENERAL_KNOWLEDGE_TAB } from '../../redux/constants';
-import { setQuizStage } from '../../redux/actions';
+import { GENERAL_KNOWLEDGE_TAB, GEOGRAPHIC_TAB } from '../../redux/constants';
+import { setQuizStage, unlockTab } from '../../redux/actions';
 
 const GeneralKnowledgeTab = () => {
   const dispatch = useDispatch();
   const stage = useSelector((state) => state.quizStages[GENERAL_KNOWLEDGE_TAB]);
+  const unlockedTabs = useSelector((state) => state.unlockedTabs);
 
   const handleCorrectAnswer = (questionNr) => {
     if (stage === questionNr - 1) {
       dispatch(setQuizStage(GENERAL_KNOWLEDGE_TAB, questionNr));
+    }
+    if (questionNr === 4) {
+      window.localStorage.setItem('unlocked-tabs', JSON.stringify(unlockedTabs.concat([GEOGRAPHIC_TAB])));
+      dispatch(unlockTab(GEOGRAPHIC_TAB));
     }
   };
 
@@ -27,7 +32,7 @@ const GeneralKnowledgeTab = () => {
         />
         { stage >= 1 && (
           <QuizQuestion
-            question="aa"
+            question="aasa"
             onCorrectAnswer={() => handleCorrectAnswer(2)}
             answer="12"
             correct={stage >= 2}
@@ -35,7 +40,7 @@ const GeneralKnowledgeTab = () => {
         )}
         { stage >= 2 && (
           <QuizQuestion
-            question="aa"
+            question="asa"
             onCorrectAnswer={() => handleCorrectAnswer(3)}
             answer="12"
             correct={stage >= 3}
@@ -43,7 +48,7 @@ const GeneralKnowledgeTab = () => {
         )}
         { stage >= 3 && (
           <QuizQuestion
-            question="aa"
+            question="abfa"
             onCorrectAnswer={() => handleCorrectAnswer(4)}
             answer="12"
             correct={stage >= 4}

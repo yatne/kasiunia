@@ -1,5 +1,5 @@
 import {
-  UNLOCK_QUIZ, SET_SELECTED_TAB, SET_ANSWER, SET_QUIZ_STAGE,
+  UNLOCK_QUIZ, SET_SELECTED_TAB, SET_ANSWER, SET_QUIZ_STAGE, UNLOCK_TAB,
 } from './constants';
 
 export const unlockQuiz = () => {
@@ -13,6 +13,13 @@ export const setOpenedTab = (page, tab) => ({
   type: SET_SELECTED_TAB,
   payload: {
     page,
+    tab,
+  },
+});
+
+export const unlockTab = (tab) => ({
+  type: UNLOCK_TAB,
+  payload: {
     tab,
   },
 });

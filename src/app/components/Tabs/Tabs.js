@@ -6,7 +6,7 @@ import { setOpenedTab } from '../../redux/actions';
 
 const Tabs = ({ page, tabs }) => {
   const selectedTabId = useSelector((state) => state.selectedTabs[page]);
-  const unlockedTabs = useSelector((state) => state.unlockedTabs[page]);
+  const unlockedTabs = useSelector((state) => state.unlockedTabs);
   const TabComponent = tabs.find((tab) => tab.id === selectedTabId).component;
 
   const dispatch = useDispatch();

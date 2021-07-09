@@ -1,5 +1,6 @@
 import {
-  UNLOCK_QUIZ, SET_SELECTED_TAB, GENERAL_KNOWLEDGE_TAB, QUIZ_PAGE_TABS, SET_ANSWER, SET_QUIZ_STAGE,
+  UNLOCK_QUIZ,
+  SET_SELECTED_TAB, GENERAL_KNOWLEDGE_TAB, QUIZ_PAGE_TABS, SET_ANSWER, SET_QUIZ_STAGE, UNLOCK_TAB,
 } from './constants';
 
 const initialState = {
@@ -7,9 +8,8 @@ const initialState = {
   selectedTabs: {
     [QUIZ_PAGE_TABS]: GENERAL_KNOWLEDGE_TAB,
   },
-  unlockedTabs: {
-    [QUIZ_PAGE_TABS]: window.localStorage.getItem(`${QUIZ_PAGE_TABS}-unlocked-tabs`) || [GENERAL_KNOWLEDGE_TAB],
-  },
+  unlockedTabs:
+    JSON.parse(window.localStorage.getItem('unlocked-tabs')) || [GENERAL_KNOWLEDGE_TAB],
   quizStages: {
     [GENERAL_KNOWLEDGE_TAB]: 0,
   },
@@ -24,6 +24,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         selectedTabs: { ...state.selectedTabs, [action.payload.page]: action.payload.tab },
+      };
+    case UNLOCK_TAB:
+      return {
+        ...state,
+        unlockedTabs: state.unlockedTabs.concat([action.payload.tab]),
       };
     case SET_ANSWER:
       return {
