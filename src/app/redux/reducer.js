@@ -6,19 +6,20 @@ import {
   SET_ANSWER,
   SET_QUIZ_STAGE,
   UNLOCK_TAB,
-  GEOGRAPHIC_TAB,
+  GEOGRAPHIC_TAB, FINAL_ROUND_TAB,
 } from './constants';
 
 const initialState = {
   quizUnlocked: window.localStorage.getItem('quizUnlocked') || false,
   selectedTabs: {
-    [QUIZ_PAGE_TABS]: GENERAL_KNOWLEDGE_TAB,
+    [QUIZ_PAGE_TABS]: FINAL_ROUND_TAB,
   },
   unlockedTabs:
     JSON.parse(window.localStorage.getItem('unlocked-tabs')) || [GENERAL_KNOWLEDGE_TAB],
   quizStages: {
     [GENERAL_KNOWLEDGE_TAB]: 0,
     [GEOGRAPHIC_TAB]: 0,
+    [FINAL_ROUND_TAB]: 0,
   },
   quizAnswers: {},
 };

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import QuizInput from '../QuizInput/QuizInput';
 
 const QuizQuestion = ({
-  question, answer, onCorrectAnswer, onlyNumbers, singular, correct,
+  question, answer, onCorrectAnswer, onlyNumbers, singular, correct, answers,
 }) => {
   let style = 'border: 1px solid black';
   if (correct) {
@@ -18,10 +18,11 @@ const QuizQuestion = ({
     <QuestionContainer borderStyle={style}>
       <Question>{question}</Question>
       <QuizInput
-        onCorrectAnswer={onCorrectAnswer}
+        onCorrectAnswer={(correctAnswer) => onCorrectAnswer(correctAnswer)}
         answer={answer}
+        answers={answers}
         onlyNumbers={onlyNumbers}
-        questionId={question.substring(0, 15)}
+        questionId={question}
       />
     </QuestionContainer>
   );
@@ -45,17 +46,20 @@ const Question = styled.div`
 
 QuizQuestion.propTypes = {
   question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
+  answer: PropTypes.string,
   onCorrectAnswer: PropTypes.func.isRequired,
   onlyNumbers: PropTypes.bool,
   singular: PropTypes.bool,
   correct: PropTypes.bool,
+  answers: PropTypes.arrayOf(PropTypes.string),
 };
 
 QuizQuestion.defaultProps = {
+  answer: '',
   onlyNumbers: false,
   singular: false,
   correct: false,
+  answers: [],
 };
 
 export default QuizQuestion;

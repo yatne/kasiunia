@@ -102,7 +102,11 @@ const GeographicsTab = () => {
     <div>
       <Header>Test z geografii historycznej! (Twoja mocna strona)</Header>
       {questions.map((question) => quizStage >= question.id && (
-        <GeoQuestion correct={quizStage > question.id} question={question.question} />
+        <GeoQuestion
+          key={question.id}
+          correct={quizStage > question.id}
+          question={question.question}
+        />
       ))}
       <div style={{
         height: '50vh', width: '75%', margin: 'auto', display: 'relative', marginBottom: '20px',
