@@ -1,6 +1,12 @@
 import {
   UNLOCK_QUIZ,
-  SET_SELECTED_TAB, GENERAL_KNOWLEDGE_TAB, QUIZ_PAGE_TABS, SET_ANSWER, SET_QUIZ_STAGE, UNLOCK_TAB,
+  SET_SELECTED_TAB,
+  GENERAL_KNOWLEDGE_TAB,
+  QUIZ_PAGE_TABS,
+  SET_ANSWER,
+  SET_QUIZ_STAGE,
+  UNLOCK_TAB,
+  GEOGRAPHIC_TAB,
 } from './constants';
 
 const initialState = {
@@ -12,6 +18,7 @@ const initialState = {
     JSON.parse(window.localStorage.getItem('unlocked-tabs')) || [GENERAL_KNOWLEDGE_TAB],
   quizStages: {
     [GENERAL_KNOWLEDGE_TAB]: 0,
+    [GEOGRAPHIC_TAB]: 0,
   },
   quizAnswers: {},
 };
