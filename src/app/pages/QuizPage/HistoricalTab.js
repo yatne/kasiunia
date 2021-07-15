@@ -2,21 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
-import { GENERAL_KNOWLEDGE_TAB, HISTORICAL_TAB } from '../../redux/constants';
+import { GEOGRAPHIC_TAB, HISTORICAL_TAB } from '../../redux/constants';
 import { setQuizStage, unlockTab } from '../../redux/actions';
-import kasiakasia from '../../../static/img/kasiakasia.png';
 
-const GeneralKnowledgeTab = () => {
+const HistoricalTab = () => {
   const dispatch = useDispatch();
-  const stage = useSelector((state) => state.quizStages[GENERAL_KNOWLEDGE_TAB]);
+  const stage = useSelector((state) => state.quizStages[HISTORICAL_TAB]);
   const unlockedTabs = useSelector((state) => state.unlockedTabs);
 
   const handleCorrectAnswer = (questionNr) => {
     if (stage === questionNr - 1) {
-      dispatch(setQuizStage(GENERAL_KNOWLEDGE_TAB, questionNr));
+      dispatch(setQuizStage(HISTORICAL_TAB, questionNr));
     }
     if (questionNr === 4) {
-      dispatch(unlockTab(HISTORICAL_TAB, unlockedTabs));
+      dispatch(unlockTab(GEOGRAPHIC_TAB, unlockedTabs));
     }
   };
 
@@ -25,15 +24,14 @@ const GeneralKnowledgeTab = () => {
       <Header>Test z wiedzy ogólnej oraz popkultury</Header>
       <div>
         <QuizQuestion
-          question="Jak się nazywa najmłodszy piesek z Psiego Patrolu?"
+          question="Co tam?"
           onCorrectAnswer={() => handleCorrectAnswer(1)}
           correct={stage >= 1}
-          answer="Rubble"
-          image={kasiakasia}
+          answer="tak"
         />
         { stage >= 1 && (
           <QuizQuestion
-            question="aasa"
+            question="aa12sa"
             onCorrectAnswer={() => handleCorrectAnswer(2)}
             answer="12"
             correct={stage >= 2}
@@ -41,7 +39,7 @@ const GeneralKnowledgeTab = () => {
         )}
         { stage >= 2 && (
           <QuizQuestion
-            question="asa"
+            question="asgdsa"
             onCorrectAnswer={() => handleCorrectAnswer(3)}
             answer="12"
             correct={stage >= 3}
@@ -49,7 +47,7 @@ const GeneralKnowledgeTab = () => {
         )}
         { stage >= 3 && (
           <QuizQuestion
-            question="abfa"
+            question="abfvbbba"
             onCorrectAnswer={() => handleCorrectAnswer(4)}
             answer="12"
             correct={stage >= 4}
@@ -71,4 +69,4 @@ const TabContainer = styled.div`
   display: block;
 `;
 
-export default GeneralKnowledgeTab;
+export default HistoricalTab;
