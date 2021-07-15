@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import QuizInput from '../QuizInput/QuizInput';
 
 const QuizQuestion = ({
-  question, answer, onCorrectAnswer, onlyNumbers, singular, correct, answers,
+  question, answer, onCorrectAnswer, onlyNumbers, singular, correct, answers, image,
 }) => {
   let style = 'border: 1px solid black';
   if (correct) {
@@ -16,27 +16,42 @@ const QuizQuestion = ({
 
   return (
     <QuestionContainer borderStyle={style}>
-      <Question>{question}</Question>
-      <QuizInput
-        onCorrectAnswer={(correctAnswer) => onCorrectAnswer(correctAnswer)}
-        answer={answer}
-        answers={answers}
-        onlyNumbers={onlyNumbers}
-        questionId={question}
-      />
+      {image && <QuestionImage src={image} alt={question} />}
+      <InnerContainer>
+        <Question>{question}</Question>
+        <QuizInput
+          onCorrectAnswer={(correctAnswer) => onCorrectAnswer(correctAnswer)}
+          answer={answer}
+          answers={answers}
+          onlyNumbers={onlyNumbers}
+          questionId={question}
+        />
+      </InnerContainer>
     </QuestionContainer>
   );
 };
 
+const QuestionImage = styled.img`
+  max-width: 50%;
+  margin-bottom: 30px;
+`;
+
 const QuestionContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   background-color: white;
   margin: 30px;
   border-radius: 2px;
   ${(props) => props.borderStyle};
+`;
+
+const InnerContainer = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const Question = styled.div`
@@ -52,6 +67,7 @@ QuizQuestion.propTypes = {
   singular: PropTypes.bool,
   correct: PropTypes.bool,
   answers: PropTypes.arrayOf(PropTypes.string),
+  image: PropTypes.string,
 };
 
 QuizQuestion.defaultProps = {
@@ -60,6 +76,7 @@ QuizQuestion.defaultProps = {
   singular: false,
   correct: false,
   answers: [],
+  image: null,
 };
 
 export default QuizQuestion;

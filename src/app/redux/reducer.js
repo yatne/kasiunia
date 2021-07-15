@@ -12,7 +12,7 @@ import {
 const initialState = {
   quizUnlocked: window.localStorage.getItem('quizUnlocked') || false,
   selectedTabs: {
-    [QUIZ_PAGE_TABS]: FINAL_ROUND_TAB,
+    [QUIZ_PAGE_TABS]: GENERAL_KNOWLEDGE_TAB,
   },
   unlockedTabs:
     JSON.parse(window.localStorage.getItem('unlocked-tabs')) || [GENERAL_KNOWLEDGE_TAB],

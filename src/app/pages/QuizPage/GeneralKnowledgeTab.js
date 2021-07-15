@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
 import { GENERAL_KNOWLEDGE_TAB, GEOGRAPHIC_TAB } from '../../redux/constants';
 import { setQuizStage, unlockTab } from '../../redux/actions';
+import kasiakasia from '../../../static/img/kasiakasia.png';
 
 const GeneralKnowledgeTab = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const GeneralKnowledgeTab = () => {
           onCorrectAnswer={() => handleCorrectAnswer(1)}
           correct={stage >= 1}
           answer="Rubble"
+          image={kasiakasia}
         />
         { stage >= 1 && (
           <QuizQuestion
