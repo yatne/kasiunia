@@ -113,7 +113,7 @@ const GeographicsTab = () => {
       }}
       >
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyAgOJ8hNIIG-JWCt4l1c11gEw0T2hYPn10' }}
+          bootstrapURLKeys={{ key: 'AIzaSyAfg4RdIeaVu-21_A71n_eYZdE72wUZqGw' }}
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
           onDrag={(map) => handleDrag(map)}
