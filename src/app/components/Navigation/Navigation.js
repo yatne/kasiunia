@@ -7,21 +7,36 @@ import logo from '../../../static/img/logo.png';
 const Navigation = () => {
   const location = useLocation();
   const quizUnlocked = useSelector((state) => state.quizUnlocked);
+  const secondPartUnlocked = useSelector((state) => state.secondPartUnlocked);
+
   return (
     <Nav>
       <Link to="/">
         <Logo src={logo} />
       </Link>
-      {quizUnlocked && (
+      <NavItems>
+        {quizUnlocked && (
         <Link to="/quiz">
           <NavItem className={location.pathname === '/quiz' ? 'selected' : ''}>
             QUIZ
           </NavItem>
         </Link>
-      )}
+        )}
+        {secondPartUnlocked && (
+        <Link to="/ajs">
+          <NavItem className={location.pathname === '/ajs' ? 'selected' : ''}>
+            DRUGI QUIZ
+          </NavItem>
+        </Link>
+        )}
+      </NavItems>
     </Nav>
   );
 };
+const NavItems = styled.div`
+    display: flex;
+    justify-content: space-end; 
+`;
 
 const Logo = styled.img`
   width: 100px;
@@ -44,6 +59,7 @@ const NavItem = styled.div`
   border-radius: 15px;
   padding: 10px;
   font-size: 1.1rem;
+  margin-left: 30px;
   
   &.selected {
     background-color: seagreen;

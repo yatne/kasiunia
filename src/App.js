@@ -14,6 +14,7 @@ import DesktopOnlyPage from './app/pages/DesktopOnlyPage';
 import QuizPage from './app/pages/QuizPage/QuizPage';
 import reducer from './app/redux/reducer';
 import './styles/global.scss';
+import SecondPartPage from './app/pages/SeccondPartPage/SecondPartPage';
 
 export default function App() {
   const store = createStore(
@@ -30,6 +31,9 @@ export default function App() {
           <Switch>
             <Route path="/quiz">
               <QuizPage />
+            </Route>
+            <Route path="/ajs">
+              <SecondPartPage />
             </Route>
             <Route path="/">
               <LandingPage />

@@ -6,16 +6,23 @@ import {
   SET_ANSWER,
   SET_QUIZ_STAGE,
   UNLOCK_TAB,
-  GEOGRAPHIC_TAB, FINAL_ROUND_TAB, HISTORICAL_TAB,
+  GEOGRAPHIC_TAB,
+  FINAL_ROUND_TAB,
+  HISTORICAL_TAB,
+  UNLOCK_SECOND_PART,
+  SECOND_PART_PAGE_TABS,
+  MATH_TAB,
 } from './constants';
 
 const initialState = {
   quizUnlocked: window.localStorage.getItem('quizUnlocked') || false,
+  secondPartUnlocked: window.localStorage.getItem('secondPartUnlocked') || false,
   selectedTabs: {
     [QUIZ_PAGE_TABS]: GENERAL_KNOWLEDGE_TAB,
+    [SECOND_PART_PAGE_TABS]: MATH_TAB,
   },
   unlockedTabs:
-    JSON.parse(window.localStorage.getItem('unlocked-tabs')) || [GENERAL_KNOWLEDGE_TAB],
+    JSON.parse(window.localStorage.getItem('unlocked-tabs')) || [GENERAL_KNOWLEDGE_TAB, MATH_TAB],
   quizStages: {
     [GENERAL_KNOWLEDGE_TAB]: 0,
     [HISTORICAL_TAB]: 0,
@@ -29,6 +36,8 @@ export default function appReducer(state = initialState, action) {
   switch (action.type) {
     case UNLOCK_QUIZ:
       return { ...state, quizUnlocked: true };
+    case UNLOCK_SECOND_PART:
+      return { ...state, secondPartUnlocked: true };
     case SET_SELECTED_TAB:
       return {
         ...state,
