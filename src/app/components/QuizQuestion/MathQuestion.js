@@ -26,6 +26,7 @@ const MathQuestion = ({
 
 const QuestionImage = styled.img`
   height: 100%;
+  max-height: 60px;
 `;
 
 const QuestionContainer = styled.div`
