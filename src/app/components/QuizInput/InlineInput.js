@@ -31,6 +31,7 @@ const Input = styled.input`
     outline: none;
   }
   font-family: "Lato", sans-serif;
+  margin-left: 8px;
 `;
 
 InlineInput.propTypes = {

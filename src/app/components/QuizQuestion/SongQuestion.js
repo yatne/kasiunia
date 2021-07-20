@@ -45,7 +45,7 @@ const SongQuestion = ({
   return (
     <QuestionContainer borderStyle={style}>
       {arr.map((item) => (item.type === 'text'
-        ? <p>{item.text}</p>
+        ? <span>{`${item.text}`}</span>
         : (
           <InlineInput
             maxSigns={item.answer.length}

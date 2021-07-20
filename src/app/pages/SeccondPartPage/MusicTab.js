@@ -31,8 +31,8 @@ const MusicTab = () => {
         />
         { stage >= 1 && (
           <SongQuestion
-            texts={['jajaje', ' jumbo']}
-            blanks={['coco', 'jajaje']}
+            texts={['너에게로 점점 다가갈래 점점내 앞에서 떠날 수 없게', '       ', ' ', ' ', ' ']}
+            blanks={['rolly', 'polly', 'rolly', 'rolly', 'polly']}
             onAllCorrect={() => handleCorrectAnswer(2)}
             correct={stage >= 2}
           />
