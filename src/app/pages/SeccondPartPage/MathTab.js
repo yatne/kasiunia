@@ -1,58 +1,85 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
-import { GENERAL_KNOWLEDGE_TAB, HISTORICAL_TAB } from '../../redux/constants';
+import { MATH_TAB, MUSIC_TAB } from '../../redux/constants';
 import { setQuizStage, unlockTab } from '../../redux/actions';
-import kasiakasia from '../../../static/img/kasiakasia.png';
+import m1 from '../../../static/img/math/1.png';
+import m2 from '../../../static/img/math/2.png';
+import m3 from '../../../static/img/math/3.png';
+import m4 from '../../../static/img/math/4.png';
+import m5 from '../../../static/img/math/5.png';
+import m6 from '../../../static/img/math/6.png';
+
+import MathQuestion from '../../components/QuizQuestion/MathQuestion';
 
 const MathTab = () => {
   const dispatch = useDispatch();
-  const stage = useSelector((state) => state.quizStages[GENERAL_KNOWLEDGE_TAB]);
+  const stage = useSelector((state) => state.quizStages[MATH_TAB]);
   const unlockedTabs = useSelector((state) => state.unlockedTabs);
 
   const handleCorrectAnswer = (questionNr) => {
     if (stage === questionNr - 1) {
-      dispatch(setQuizStage(GENERAL_KNOWLEDGE_TAB, questionNr));
+      dispatch(setQuizStage(MATH_TAB, questionNr));
     }
-    if (questionNr === 4) {
-      dispatch(unlockTab(HISTORICAL_TAB, unlockedTabs));
+    if (questionNr === 6) {
+      dispatch(unlockTab(MUSIC_TAB, unlockedTabs));
     }
   };
 
   return (
     <TabContainer>
-      <Header>Test z wiedzy ogólnej oraz popkultury</Header>
+      <Header>Rozwiąż równania</Header>
       <div>
-        <QuizQuestion
-          question="Jak się nazywa najmłodszy piesek z Psiego Patrolu?"
+        <MathQuestion
+          image={m1}
           onCorrectAnswer={() => handleCorrectAnswer(1)}
+          answer="2"
+          questionId="m1"
           correct={stage >= 1}
-          answer="Rubble"
-          image={kasiakasia}
         />
         { stage >= 1 && (
-          <QuizQuestion
-            question="aasa"
+          <MathQuestion
+            image={m2}
             onCorrectAnswer={() => handleCorrectAnswer(2)}
-            answer="12"
+            answer="8"
+            questionId="m2"
             correct={stage >= 2}
           />
         )}
         { stage >= 2 && (
-          <QuizQuestion
-            question="asa"
+          <MathQuestion
+            image={m3}
             onCorrectAnswer={() => handleCorrectAnswer(3)}
-            answer="12"
+            answer="0"
+            questionId="m3"
             correct={stage >= 3}
           />
         )}
         { stage >= 3 && (
-          <QuizQuestion
-            question="abfa"
+          <MathQuestion
+            image={m4}
             onCorrectAnswer={() => handleCorrectAnswer(4)}
-            answer="12"
+            answer="7"
+            questionId="m4"
             correct={stage >= 4}
+          />
+        )}
+        { stage >= 4 && (
+          <MathQuestion
+            image={m5}
+            onCorrectAnswer={() => handleCorrectAnswer(5)}
+            answer="9"
+            questionId="m5"
+            correct={stage >= 5}
+          />
+        )}
+        { stage >= 5 && (
+          <MathQuestion
+            image={m6}
+            onCorrectAnswer={() => handleCorrectAnswer(6)}
+            answer="1"
+            questionId="m6"
+            correct={stage >= 6}
           />
         )}
       </div>

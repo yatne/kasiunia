@@ -8,7 +8,7 @@ const QuizQuestion = ({
 }) => {
   let style = 'border: 1px solid black';
   if (correct) {
-    style = 'border: 1px solid green';
+    style = 'border: 2px solid green';
   }
   if (singular) {
     style = 'box-shadow: 1px 2px #dddddd';

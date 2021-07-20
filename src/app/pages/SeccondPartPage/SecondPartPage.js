@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Layout from '../../components/Layout/Layout';
 import Tabs from '../../components/Tabs/Tabs';
 import MathTab from './MathTab';
@@ -9,15 +9,17 @@ import {
   FINAL_FINAL_TAB,
   SECOND_PART_PAGE_TABS,
 } from '../../redux/constants';
-import { unlockSecondPart } from '../../redux/actions';
+import { unlockSecondPart, unlockTab } from '../../redux/actions';
 import MusicTab from './MusicTab';
 import FinalFinalTab from './FinalFinalTab';
 
 const SecondPartPage = () => {
   const dispatch = useDispatch();
+  const unlockedTabs = useSelector((state) => state.unlockedTabs);
 
   useEffect(() => {
     dispatch(unlockSecondPart());
+    dispatch(unlockTab(MATH_TAB, unlockedTabs));
   }, []);
 
   const tabs = [

@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import wieszak from '../../../static/img/wieszak.jpeg';
 
 const FinalFinalTab = () => (
   <TabContainer>
-    coostam
+    <img src={wieszak} alt="wieszak" />
   </TabContainer>
 );
 
 const TabContainer = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
 `;
 
 export default FinalFinalTab;

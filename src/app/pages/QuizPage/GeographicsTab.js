@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import GeoQuestion from '../../components/GeoQuestion/GeoQuestion';
 import { FINAL_ROUND_TAB, GENERAL_KNOWLEDGE_TAB, GEOGRAPHIC_TAB } from '../../redux/constants';
 import { setQuizStage, unlockTab } from '../../redux/actions';
+import i1 from '../../../static/img/51.jpg';
+import i2 from '../../../static/img/52.jpg';
+import GeoImageQuestion from '../../components/GeoQuestion/GeoImageQuestion';
 
 const GeographicsTab = () => {
   const dispatch = useDispatch();
@@ -34,32 +37,33 @@ const GeographicsTab = () => {
     },
     {
       id: 1,
-      question: 'Gdzie założyłaś aktualną rodzinę?',
+      question: 'Gdzie były robione te zdjęcia?',
       answer: {
-        minLat: 52.144132120301315,
-        maxLat: 52.14538163803674,
-        minLng: 20.813026677760526,
-        maxLng: 20.814913227613097,
+        minLat: 52.271139209275006,
+        maxLat: 52.27492222615222,
+        minLng: 20.950276058346404,
+        maxLng: 20.9549573942045,
       },
+      images: [i1, i2],
     },
     {
       id: 2,
-      question: 'Gdzie pierwszy raz powiększyłaś rodzinę?',
-      answer: {
-        minLat: 52.2282880246145,
-        maxLat: 52.230702455337706,
-        minLng: 21.028410266596797,
-        maxLng: 21.033684367541145,
-      },
-    },
-    {
-      id: 3,
       question: 'Gdzie doszło do pierwszego pocałunku prawdziwej miłości? ♡',
       answer: {
         minLat: 52.14002189315282,
         maxLat: 52.142617272817404,
         minLng: 20.81254513919752,
         maxLng: 20.816964906467035,
+      },
+    },
+    {
+      id: 3,
+      question: 'Gdzie poznałaś pierwszego nowego członka rodziny?',
+      answer: {
+        minLat: 52.2282880246145,
+        maxLat: 52.230702455337706,
+        minLng: 21.028410266596797,
+        maxLng: 21.033684367541145,
       },
     },
     {
@@ -101,12 +105,21 @@ const GeographicsTab = () => {
   return (
     <div>
       <Header>Test z geografii historycznej! (Twoja mocna strona)</Header>
-      {questions.map((question) => quizStage >= question.id && (
-        <GeoQuestion
+      {questions.map((question) => quizStage >= question.id && (question.images ? (
+        <GeoImageQuestion
           key={question.id}
           correct={quizStage > question.id}
           question={question.question}
+          images={question.images}
         />
+      )
+        : (
+          <GeoQuestion
+            key={question.id}
+            correct={quizStage > question.id}
+            question={question.question}
+          />
+        )
       ))}
       <div style={{
         height: '50vh', width: '75%', margin: 'auto', display: 'relative', marginBottom: '20px',

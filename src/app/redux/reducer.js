@@ -11,7 +11,7 @@ import {
   HISTORICAL_TAB,
   UNLOCK_SECOND_PART,
   SECOND_PART_PAGE_TABS,
-  MATH_TAB,
+  MATH_TAB, MUSIC_TAB, FINAL_FINAL_TAB,
 } from './constants';
 
 const initialState = {
@@ -28,6 +28,9 @@ const initialState = {
     [HISTORICAL_TAB]: 0,
     [GEOGRAPHIC_TAB]: 0,
     [FINAL_ROUND_TAB]: 0,
+    [MATH_TAB]: 0,
+    [MUSIC_TAB]: 0,
+    [FINAL_FINAL_TAB]: 0,
   },
   quizAnswers: {},
 };

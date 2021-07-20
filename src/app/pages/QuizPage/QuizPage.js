@@ -34,9 +34,9 @@ const QuizPage = () => {
     <Layout>
       <Tabs page={QUIZ_PAGE_TABS} tabs={tabs} />
       {geoQuizStage === 5 && (
-      <HiddenTip>
-        Via del Governo Vecchio
-      </HiddenTip>
+        <HiddenTip>
+          Via del Governo Vecchio
+        </HiddenTip>
       )}
     </Layout>
   );

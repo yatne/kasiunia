@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
 import { GENERAL_KNOWLEDGE_TAB, HISTORICAL_TAB } from '../../redux/constants';
 import { setQuizStage, unlockTab } from '../../redux/actions';
-import kasiakasia from '../../../static/img/kasiakasia.png';
 
 const GeneralKnowledgeTab = () => {
   const dispatch = useDispatch();
@@ -15,7 +14,7 @@ const GeneralKnowledgeTab = () => {
     if (stage === questionNr - 1) {
       dispatch(setQuizStage(GENERAL_KNOWLEDGE_TAB, questionNr));
     }
-    if (questionNr === 4) {
+    if (questionNr === 1) {
       dispatch(unlockTab(HISTORICAL_TAB, unlockedTabs));
     }
   };
@@ -29,13 +28,12 @@ const GeneralKnowledgeTab = () => {
           onCorrectAnswer={() => handleCorrectAnswer(1)}
           correct={stage >= 1}
           answer="Rubble"
-          image={kasiakasia}
         />
         { stage >= 1 && (
           <QuizQuestion
-            question="aasa"
+            question="Która planeta wiruje na boku?"
             onCorrectAnswer={() => handleCorrectAnswer(2)}
-            answer="12"
+            answer="Uran"
             correct={stage >= 2}
           />
         )}
