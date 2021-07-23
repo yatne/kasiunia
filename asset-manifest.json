@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.7746448c.chunk.css",
-    "main.js": "/static/js/main.0614b0e5.chunk.js",
-    "main.js.map": "/static/js/main.0614b0e5.chunk.js.map",
+    "main.js": "/static/js/main.4eb97f5b.chunk.js",
+    "main.js.map": "/static/js/main.4eb97f5b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4d17b70e.js",
     "runtime-main.js.map": "/static/js/runtime-main.4d17b70e.js.map",
     "static/js/2.68f9a526.chunk.js": "/static/js/2.68f9a526.chunk.js",
@@ -31,12 +31,13 @@
     "static/media/ptasie-mleczko.7fe68c82.png": "/static/media/ptasie-mleczko.7fe68c82.png",
     "static/media/stolat.cdfb6dd0.png": "/static/media/stolat.cdfb6dd0.png",
     "static/media/urodziny.f21c1faf.mp3": "/static/media/urodziny.f21c1faf.mp3",
+    "static/media/w.946c5962.jpeg": "/static/media/w.946c5962.jpeg",
     "static/media/wieszak.e58ec51c.jpeg": "/static/media/wieszak.e58ec51c.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.4d17b70e.js",
     "static/js/2.68f9a526.chunk.js",
     "static/css/main.7746448c.chunk.css",
-    "static/js/main.0614b0e5.chunk.js"
+    "static/js/main.4eb97f5b.chunk.js"
   ]
 }
