@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { object, string } from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import InlineInput from '../QuizInput/InlineInput';
@@ -28,7 +28,11 @@ const SongQuestion = ({
         type: 'input', answer: blanks[index], id: blankId, value,
       });
       answerArr.push(
-        { id: blankId, correctValue: blanks[index], correct: blanks[index] === value },
+        {
+          id: blankId,
+          correctValue: blanks[index],
+          correct: value && blanks[index].toLowerCase() === value.toLowerCase(),
+        },
       );
     }
   });
@@ -36,7 +40,7 @@ const SongQuestion = ({
   const handleValueChange = (id, value) => {
     dispatch(setAnswer(id, value));
     const answer = answerArr.find((ans) => ans.id === id);
-    answer.correct = answer.correctValue === value;
+    answer.correct = answer.correctValue.toLowerCase() === value.toLowerCase();
     if (!answerArr.find((ans) => !ans.correct)) {
       onAllCorrect();
     }
@@ -52,7 +56,7 @@ const SongQuestion = ({
             width={`${item.answer.length * 8}px`}
             id={item.id}
             onValueChange={handleValueChange}
-            correct={item.value === item.answer}
+            correct={item.value?.toLowerCase() === item.answer.toLowerCase()}
             initialValue={item.value}
           />
         )))}
@@ -61,7 +65,7 @@ const SongQuestion = ({
 };
 
 const QuestionContainer = styled.div`
-  display: flex;
+  display: block;
   flex-direction: row;
   align-items: center;
   padding: 20px;
@@ -73,8 +77,7 @@ const QuestionContainer = styled.div`
 
 SongQuestion.propTypes = {
   texts: PropTypes.arrayOf(string).isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  blanks: PropTypes.arrayOf(object).isRequired,
+  blanks: PropTypes.arrayOf(string).isRequired,
   correct: PropTypes.bool,
   onAllCorrect: PropTypes.func.isRequired,
 };

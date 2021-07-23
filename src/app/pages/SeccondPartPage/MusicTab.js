@@ -9,12 +9,46 @@ const MusicTab = () => {
   const dispatch = useDispatch();
   const stage = useSelector((state) => state.quizStages[MUSIC_TAB]);
   const unlockedTabs = useSelector((state) => state.unlockedTabs);
+  const questions = [
+    {
+      texts: ['W układzie słonecznym', 'planety. Wszystkie w innym tempie okrążają', '. Różnią się', ',', 'i', '.'],
+      blanks: ['wirują', 'słońce', 'kolorem', 'masą', 'rozmiarem'],
+    },
+    {
+      texts: ['Znowu płakać mi się chce Bo', '', 'pada deszcz A do ', 'miałem iść na zakupy Czemu wszystko musi być tak do'],
+      blanks: ['na', 'polu', 'Biedronki', 'chrzanu'],
+    },
+    {
+      texts: ['Jak sobota to tylko', '', '', '', ' bo promocje tam parking', '', '', '', ''],
+      blanks: ['do', 'Lidla', 'do', 'Lidla', 'ram', 'pam', 'pam', 'pam'],
+    },
+    {
+      texts: ['Jak się bawią ludzie', '', '', ''],
+      blanks: ['Wtedy', 'kiedy', 'pada', 'deszcz'],
+    },
+    {
+      texts: ['', ',', ', pamiętasz lato ze snu'],
+      blanks: ['żonka', 'żonka'],
+    },
+    {
+      texts: ['...', ',', ',', ',', ',', ',', 'Tak! To paczka ta!'],
+      blanks: ['marshall', 'rubble', 'chase', 'rocky', 'zuma', 'skye'],
+    },
+    {
+      texts: ['Oj dziecko, dziecko to jest', ''],
+      blanks: ['dziki', 'świat'],
+    },
+    {
+      texts: ['... 너에게로 점점 다가갈래 점점내 앞에서 떠날 수 없게', ' ', ' ', ' ', ' '],
+      blanks: ['rolly', 'polly', 'rolly', 'rolly', 'polly'],
+    },
+  ];
 
   const handleCorrectAnswer = (questionNr) => {
     if (stage === questionNr - 1) {
       dispatch(setQuizStage(MUSIC_TAB, questionNr));
     }
-    if (questionNr === 6) {
+    if (questionNr === questions.length) {
       dispatch(unlockTab(FINAL_FINAL_TAB, unlockedTabs));
     }
   };
@@ -23,52 +57,15 @@ const MusicTab = () => {
     <TabContainer>
       <Header>Uzupełnij tekst piosenki</Header>
       <div>
+        {questions.map((question, index) => stage >= index && (
         <SongQuestion
-          texts={['', ',', ', pamiętasz lato ze snu']}
-          blanks={['żonka', 'żonka']}
-          onAllCorrect={() => handleCorrectAnswer(1)}
-          correct={stage >= 1}
+          key={question.texts[0] + question.blanks[0]}
+          texts={question.texts}
+          blanks={question.blanks}
+          onAllCorrect={() => handleCorrectAnswer(index + 1)}
+          correct={stage >= index + 1}
         />
-        { stage >= 1 && (
-          <SongQuestion
-            texts={['너에게로 점점 다가갈래 점점내 앞에서 떠날 수 없게', '       ', ' ', ' ', ' ']}
-            blanks={['rolly', 'polly', 'rolly', 'rolly', 'polly']}
-            onAllCorrect={() => handleCorrectAnswer(2)}
-            correct={stage >= 2}
-          />
-        )}
-        { stage >= 2 && (
-          <SongQuestion
-            texts={['jajaje', ' jumbo']}
-            blanks={['coco', 'jajaje']}
-            onAllCorrect={() => handleCorrectAnswer(3)}
-            correct={stage >= 3}
-          />
-        )}
-        { stage >= 3 && (
-          <SongQuestion
-            texts={['jajaje', ' jumbo']}
-            blanks={['coco', 'jajaje']}
-            onAllCorrect={() => handleCorrectAnswer(4)}
-            correct={stage >= 4}
-          />
-        )}
-        { stage >= 4 && (
-          <SongQuestion
-            texts={['jajaje', ' jumbo']}
-            blanks={['coco', 'jajaje']}
-            onAllCorrect={() => handleCorrectAnswer(5)}
-            correct={stage >= 5}
-          />
-        )}
-        { stage >= 5 && (
-          <SongQuestion
-            texts={['jajaje', ' jumbo']}
-            blanks={['coco', 'jajaje']}
-            onAllCorrect={() => handleCorrectAnswer(6)}
-            correct={stage >= 6}
-          />
-        )}
+        ))}
       </div>
     </TabContainer>
   );

@@ -10,10 +10,6 @@ const FinalRoundTab = () => {
   const dispatch = useDispatch();
   const stage = useSelector((state) => state.quizStages[FINAL_ROUND_TAB]);
   const answerOne = useSelector((state) => state.quizAnswers['Zdobądź hasło od naszych przyjaciół']);
-  const answerTwo = useSelector((state) => state.quizAnswers['Zdobądź hasło od naszych drugich przyjaciół']);
-
-  // eslint-disable-next-line no-unused-vars
-  const differentAnswers = useSelector((state) => state.quizAnswers['Zdobądź hasło od naszych przyjaciół'] !== state.quizAnswers['Zdobądź hasło od naszych drugich przyjaciół']);
 
   const handleCorrectAnswer = (questionNr, correctAnswer = '') => {
     if (stage === 0 && questionNr === 1) {
@@ -33,21 +29,19 @@ const FinalRoundTab = () => {
     <TabContainer>
       <Header>
         Pozdrawiam
-        {answerOne}
-        {answerTwo}
       </Header>
       <div>
         <QuizQuestion
           question="Zdobądź hasło od naszych przyjaciół"
           onCorrectAnswer={() => handleCorrectAnswer(1)}
           correct={stage >= 1}
-          answers={['pupa', 'zupa']}
+          answers={['szczurowo', 'tykoczing', 'tykoching']}
         />
         { stage >= 1 && (
           <QuizQuestion
             question="Zdobądź hasło od naszych drugich przyjaciół"
             onCorrectAnswer={(correctAnswer) => handleCorrectAnswer(2, correctAnswer)}
-            answers={['pupa', 'zupa']}
+            answers={['szczurowo', 'tykoczing', 'tykoching']}
             correct={stage >= 2}
           />
         )}

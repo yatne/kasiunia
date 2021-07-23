@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
 import { GENERAL_KNOWLEDGE_TAB, HISTORICAL_TAB } from '../../redux/constants';
 import { setQuizStage, unlockTab } from '../../redux/actions';
+import wendy from '../../../static/img/w.jpeg';
 
 const GeneralKnowledgeTab = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const GeneralKnowledgeTab = () => {
     if (stage === questionNr - 1) {
       dispatch(setQuizStage(GENERAL_KNOWLEDGE_TAB, questionNr));
     }
-    if (questionNr === 1) {
+    if (questionNr === 6) {
       dispatch(unlockTab(HISTORICAL_TAB, unlockedTabs));
     }
   };
@@ -39,18 +40,35 @@ const GeneralKnowledgeTab = () => {
         )}
         { stage >= 2 && (
           <QuizQuestion
-            question="asa"
+            question="Jak ma na nazwisko właścicielka sklepu w Pontypandy?"
             onCorrectAnswer={() => handleCorrectAnswer(3)}
-            answer="12"
+            answer="Price"
             correct={stage >= 3}
           />
         )}
         { stage >= 3 && (
           <QuizQuestion
-            question="abfa"
+            question="Czego boi się Skye?"
             onCorrectAnswer={() => handleCorrectAnswer(4)}
-            answer="12"
+            answer="Orłów"
             correct={stage >= 4}
+          />
+        )}
+        { stage >= 4 && (
+          <QuizQuestion
+            question="Kto to jest?"
+            onCorrectAnswer={() => handleCorrectAnswer(5)}
+            answer="Wendy"
+            correct={stage >= 5}
+            image={wendy}
+          />
+        )}
+        { stage >= 5 && (
+          <QuizQuestion
+            question="Jak się nazywa bratanek burmistrza Humdingera?"
+            onCorrectAnswer={() => handleCorrectAnswer(6)}
+            answer="Harold"
+            correct={stage >= 6}
           />
         )}
       </div>

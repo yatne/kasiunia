@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GoogleMapReact from 'google-map-react';
 import { useDispatch, useSelector } from 'react-redux';
 import GeoQuestion from '../../components/GeoQuestion/GeoQuestion';
-import { FINAL_ROUND_TAB, GENERAL_KNOWLEDGE_TAB, GEOGRAPHIC_TAB } from '../../redux/constants';
+import { FINAL_ROUND_TAB, GEOGRAPHIC_TAB } from '../../redux/constants';
 import { setQuizStage, unlockTab } from '../../redux/actions';
 import i1 from '../../../static/img/51.jpg';
 import i2 from '../../../static/img/52.jpg';
@@ -12,6 +12,7 @@ import GeoImageQuestion from '../../components/GeoQuestion/GeoImageQuestion';
 const GeographicsTab = () => {
   const dispatch = useDispatch();
   const quizStage = useSelector((state) => state.quizStages[GEOGRAPHIC_TAB]);
+  const unlockedTabs = useSelector((state) => state.unlockedTabs);
 
   const [lat, setLat] = useState(52.229609700027126);
   const [lng, setLng] = useState(21.008587478535755);
@@ -96,7 +97,7 @@ const GeographicsTab = () => {
     setLng(map.center.lng());
     if (questions[quizStage] && isDragCorrect(questions[quizStage].answer)) {
       if (quizStage === 5) {
-        dispatch(unlockTab(FINAL_ROUND_TAB, [GENERAL_KNOWLEDGE_TAB, GEOGRAPHIC_TAB]));
+        dispatch(unlockTab(FINAL_ROUND_TAB, unlockedTabs));
       }
       dispatch(setQuizStage(GEOGRAPHIC_TAB, quizStage + 1));
     }
