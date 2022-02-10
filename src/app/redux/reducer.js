@@ -1,38 +1,33 @@
 import {
   UNLOCK_QUIZ,
   SET_SELECTED_TAB,
-  GENERAL_KNOWLEDGE_TAB,
-  QUIZ_PAGE_TABS,
+  TAB_A,
   SET_ANSWER,
   SET_QUIZ_STAGE,
-  UNLOCK_TAB,
-  GEOGRAPHIC_TAB,
-  FINAL_ROUND_TAB,
-  HISTORICAL_TAB,
+  TAB_B,
+  TAB_C,
+  TAB_D,
   UNLOCK_SECOND_PART,
-  SECOND_PART_PAGE_TABS,
-  MATH_TAB, MUSIC_TAB, FINAL_FINAL_TAB,
+  SET_ISBN_PART,
 } from './constants';
 
 const initialState = {
   quizUnlocked: window.localStorage.getItem('quizUnlocked') || false,
   secondPartUnlocked: window.localStorage.getItem('secondPartUnlocked') || false,
-  selectedTabs: {
-    [QUIZ_PAGE_TABS]: GENERAL_KNOWLEDGE_TAB,
-    [SECOND_PART_PAGE_TABS]: MATH_TAB,
-  },
-  unlockedTabs:
-    JSON.parse(window.localStorage.getItem('unlocked-tabs')) || [GENERAL_KNOWLEDGE_TAB, MATH_TAB],
+  selectedTab: TAB_A,
   quizStages: {
-    [GENERAL_KNOWLEDGE_TAB]: 0,
-    [HISTORICAL_TAB]: 0,
-    [GEOGRAPHIC_TAB]: 0,
-    [FINAL_ROUND_TAB]: 0,
-    [MATH_TAB]: 0,
-    [MUSIC_TAB]: 0,
-    [FINAL_FINAL_TAB]: 0,
+    [TAB_A]: 0,
+    [TAB_D]: 0,
+    [TAB_B]: 0,
+    [TAB_C]: 0,
   },
   quizAnswers: {},
+  isbn: {
+    [TAB_A]: '',
+    [TAB_D]: '',
+    [TAB_B]: '',
+    [TAB_C]: '',
+  },
 };
 
 export default function appReducer(state = initialState, action) {
@@ -44,12 +39,7 @@ export default function appReducer(state = initialState, action) {
     case SET_SELECTED_TAB:
       return {
         ...state,
-        selectedTabs: { ...state.selectedTabs, [action.payload.page]: action.payload.tab },
-      };
-    case UNLOCK_TAB:
-      return {
-        ...state,
-        unlockedTabs: state.unlockedTabs.concat([action.payload.tab]),
+        selectedTab: action.payload.tab,
       };
     case SET_ANSWER:
       return {
@@ -62,6 +52,14 @@ export default function appReducer(state = initialState, action) {
         quizStages: {
           ...state.quizStages,
           [action.payload.tab]: action.payload.stage,
+        },
+      };
+    case SET_ISBN_PART:
+      return {
+        ...state,
+        isbn: {
+          ...state.isbn,
+          [action.payload.tab]: action.payload.part,
         },
       };
     default:

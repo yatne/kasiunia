@@ -4,27 +4,20 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { setOpenedTab } from '../../redux/actions';
 
-const Tabs = ({ page, tabs }) => {
-  const selectedTabId = useSelector((state) => state.selectedTabs[page]);
-  const unlockedTabs = useSelector((state) => state.unlockedTabs);
+const Tabs = ({ tabs }) => {
+  const selectedTabId = useSelector((state) => state.selectedTab);
   const TabComponent = tabs.find((tab) => tab.id === selectedTabId).component;
 
   const dispatch = useDispatch();
-
-  const handleClick = (pageId, tabId) => {
-    if (unlockedTabs.includes(tabId)) {
-      dispatch(setOpenedTab(pageId, tabId));
-    }
-  };
 
   return (
     <TabsContainer>
       <TabsNavigation>
         {tabs.map((tab) => (
           <TabsNavItem
-            className={`${selectedTabId === tab.id ? 'selected' : ''} ${unlockedTabs.includes(tab.id) ? '' : 'disabled'}`}
+            className={`${selectedTabId === tab.id ? 'selected' : ''}`}
             key={tab.id}
-            onClick={() => handleClick(page, tab.id)}
+            onClick={() => dispatch(setOpenedTab(tab.id))}
           >
             {tab.label}
           </TabsNavItem>
@@ -81,7 +74,6 @@ const TabsNavItem = styled.li`
 `;
 
 Tabs.propTypes = {
-  page: PropTypes.string.isRequired,
   tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 

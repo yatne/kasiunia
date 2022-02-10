@@ -2,16 +2,13 @@ export const UNLOCK_QUIZ = 'UNLOCK_QUIZ';
 export const SET_SELECTED_TAB = 'SET_SELECTED_TAB';
 export const SET_ANSWER = 'SET_ANSWER';
 export const SET_QUIZ_STAGE = 'SET_QUIZ_STAGE';
-export const UNLOCK_TAB = 'UNLOCK_TAB';
 export const UNLOCK_SECOND_PART = 'UNLOCK_SECOND_TAB';
+export const SET_ISBN_PART = 'SET_ISBN_PART';
 
-export const GENERAL_KNOWLEDGE_TAB = 'GENERAL_KNOWLEDGE_TAB';
-export const GEOGRAPHIC_TAB = 'GEOGRAPHIC_TAB';
-export const FINAL_ROUND_TAB = 'FINAL_ROUND_TAB';
-export const HISTORICAL_TAB = 'HISTORICAL_TAB';
-export const MATH_TAB = 'MATH_TAB';
-export const MUSIC_TAB = 'MUSIC_TAB';
-export const FINAL_FINAL_TAB = 'FINAL_FINAL_TAB';
+export const TAB_A = 'TAB_A';
+export const TAB_B = 'TAB_B';
+export const TAB_C = 'TAB_C';
+export const TAB_D = 'TAB_D';
 
 export const QUIZ_PAGE_TABS = 'QUIZ_PAGE_TABS';
 export const SECOND_PART_PAGE_TABS = 'SECOND_PART_PAGE_TABS';

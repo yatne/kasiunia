@@ -2,21 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
-import { GENERAL_KNOWLEDGE_TAB, HISTORICAL_TAB } from '../../redux/constants';
-import { setQuizStage, unlockTab } from '../../redux/actions';
+import { TAB_A } from '../../redux/constants';
+import { setQuizStage } from '../../redux/actions';
 import wendy from '../../../static/img/w.jpeg';
 
-const GeneralKnowledgeTab = () => {
+const TabA = () => {
   const dispatch = useDispatch();
-  const stage = useSelector((state) => state.quizStages[GENERAL_KNOWLEDGE_TAB]);
-  const unlockedTabs = useSelector((state) => state.unlockedTabs);
+  const stage = useSelector((state) => state.quizStages[TAB_A]);
 
   const handleCorrectAnswer = (questionNr) => {
     if (stage === questionNr - 1) {
-      dispatch(setQuizStage(GENERAL_KNOWLEDGE_TAB, questionNr));
-    }
-    if (questionNr === 6) {
-      dispatch(unlockTab(HISTORICAL_TAB, unlockedTabs));
+      dispatch(setQuizStage(TAB_A, questionNr));
     }
   };
 
@@ -87,4 +83,4 @@ const TabContainer = styled.div`
   display: block;
 `;
 
-export default GeneralKnowledgeTab;
+export default TabA;

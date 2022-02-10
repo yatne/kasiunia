@@ -1,21 +1,20 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 import Layout from '../../components/Layout/Layout';
 import Tabs from '../../components/Tabs/Tabs';
-import GeneralKnowledgeTab from './GeneralKnowledgeTab';
 import {
-  GENERAL_KNOWLEDGE_TAB, GEOGRAPHIC_TAB, QUIZ_PAGE_TABS, FINAL_ROUND_TAB, HISTORICAL_TAB,
+  TAB_A, TAB_B, TAB_C, TAB_D,
 } from '../../redux/constants';
-import GeographicsTab from './GeographicsTab';
-import FinalRoundTab from './FinalRoundTab';
-import HistoricalTab from './HistoricalTab';
+import TabA from './TabA';
+import TabB from './TabB';
+import TabC from './TabC';
+import TabD from './TabD';
+import ISBNInput from './ISBNInput';
 
 const QuizPage = () => {
   const quizUnlocked = useSelector((state) => state.quizUnlocked);
   const history = useHistory();
-  const geoQuizStage = useSelector((state) => state.quizStages[GEOGRAPHIC_TAB]);
 
   useEffect(() => {
     if (!quizUnlocked) {
@@ -24,28 +23,18 @@ const QuizPage = () => {
   }, []);
 
   const tabs = [
-    { label: 'Wiedza ogólna', component: GeneralKnowledgeTab, id: GENERAL_KNOWLEDGE_TAB },
-    { label: 'Historia', component: HistoricalTab, id: HISTORICAL_TAB },
-    { label: 'Geografia', component: GeographicsTab, id: GEOGRAPHIC_TAB },
-    { label: 'Runda Finałowa', component: FinalRoundTab, id: FINAL_ROUND_TAB },
+    { label: 'A', component: TabA, id: TAB_A },
+    { label: 'B', component: TabB, id: TAB_B },
+    { label: 'C', component: TabC, id: TAB_C },
+    { label: 'D', component: TabD, id: TAB_D },
   ];
 
   return (
     <Layout>
-      <Tabs page={QUIZ_PAGE_TABS} tabs={tabs} />
-      {geoQuizStage === 5 && (
-        <HiddenTip>
-          Via del Governo Vecchio
-        </HiddenTip>
-      )}
+      <Tabs tabs={tabs} />
+      <ISBNInput />
     </Layout>
   );
 };
-
-const HiddenTip = styled.div`
-  margin-top: 200px;
-  display: block;
-  color: green;
-`;
 
 export default QuizPage;
