@@ -1,5 +1,5 @@
 import {
-  UNLOCK_QUIZ,
+  UNLOCK_GAME,
   SET_SELECTED_TAB,
   TAB_A,
   SET_ANSWER,
@@ -7,12 +7,11 @@ import {
   TAB_B,
   TAB_C,
   TAB_D,
-  UNLOCK_SECOND_PART,
   SET_ISBN_PART,
 } from './constants';
 
 const initialState = {
-  quizUnlocked: window.localStorage.getItem('quizUnlocked') || false,
+  gameUnlocked: window.localStorage.getItem('gameUnlocked') || false,
   secondPartUnlocked: window.localStorage.getItem('secondPartUnlocked') || false,
   selectedTab: TAB_A,
   quizStages: {
@@ -32,10 +31,8 @@ const initialState = {
 
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
-    case UNLOCK_QUIZ:
-      return { ...state, quizUnlocked: true };
-    case UNLOCK_SECOND_PART:
-      return { ...state, secondPartUnlocked: true };
+    case UNLOCK_GAME:
+      return { ...state, gameUnlocked: true };
     case SET_SELECTED_TAB:
       return {
         ...state,

@@ -6,7 +6,7 @@ import logo from '../../../static/img/logo.png';
 
 const Navigation = () => {
   const location = useLocation();
-  const quizUnlocked = useSelector((state) => state.quizUnlocked);
+  const gameUnlocked = useSelector((state) => state.gameUnlocked);
   const secondPartUnlocked = useSelector((state) => state.secondPartUnlocked);
 
   return (
@@ -15,7 +15,7 @@ const Navigation = () => {
         <Logo src={logo} />
       </Link>
       <NavItems>
-        {quizUnlocked && (
+        {gameUnlocked && (
         <Link to="/quiz">
           <NavItem className={location.pathname === '/quiz' ? 'selected' : ''}>
             QUIZ

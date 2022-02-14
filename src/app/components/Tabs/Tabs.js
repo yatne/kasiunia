@@ -13,9 +13,9 @@ const Tabs = ({ tabs }) => {
   return (
     <TabsContainer>
       <TabsNavigation>
-        {tabs.map((tab) => (
+        {tabs.map((tab, index) => (
           <TabsNavItem
-            className={`${selectedTabId === tab.id ? 'selected' : ''}`}
+            className={`${selectedTabId === tab.id ? 'selected' : ''} tab-${index}`}
             key={tab.id}
             onClick={() => dispatch(setOpenedTab(tab.id))}
           >
@@ -51,8 +51,6 @@ const TabsNavItem = styled.li`
   display: flex;
   width: 100%;
   justify-content: space-around;
-  border-right: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
   align-items: center;
   height: 32px;
   cursor: pointer;
@@ -66,10 +64,20 @@ const TabsNavItem = styled.li`
     cursor: auto;
     color: grey;
   }
-  
+  &.tab-0 {
+    background: #D7E114;
+  }
+  &.tab-1 {
+    background: #18B715;
+  }
+  &.tab-2 {
+    background: #3D19DC;
+  }
+  &.tab-3 {
+    background: #DB1AD2;
+  }
   &.selected {
-    border-bottom: 1px solid #fdfdfd;
-    color: seagreen;
+    height: 40px;
   }
 `;
 

@@ -13,11 +13,11 @@ import TabD from './TabD';
 import ISBNInput from './ISBNInput';
 
 const QuizPage = () => {
-  const quizUnlocked = useSelector((state) => state.quizUnlocked);
+  const gameUnlocked = useSelector((state) => state.gameUnlocked);
   const history = useHistory();
 
   useEffect(() => {
-    if (!quizUnlocked) {
+    if (!gameUnlocked) {
       history.push('/');
     }
   }, []);

@@ -1,18 +1,11 @@
 import {
-  UNLOCK_QUIZ, SET_SELECTED_TAB, SET_ANSWER, SET_QUIZ_STAGE, UNLOCK_SECOND_PART, SET_ISBN_PART,
+  UNLOCK_GAME, SET_SELECTED_TAB, SET_ANSWER, SET_QUIZ_STAGE, SET_ISBN_PART,
 } from './constants';
 
-export const unlockQuiz = () => {
-  window.localStorage.setItem('quizUnlocked', true);
+export const unlockGame = () => {
+  window.localStorage.setItem('gameUnlocked', true);
   return ({
-    type: UNLOCK_QUIZ,
-  });
-};
-
-export const unlockSecondPart = () => {
-  window.localStorage.setItem('secondPartUnlocked', true);
-  return ({
-    type: UNLOCK_SECOND_PART,
+    type: UNLOCK_GAME,
   });
 };
 
