@@ -32,10 +32,13 @@ export const setQuizStage = (tab, stage) => ({
   },
 });
 
-export const setIsbnPart = (tab, part) => ({
-  type: SET_ISBN_PART,
-  payload: {
-    tab,
-    part,
-  },
-});
+export const setIsbnPart = (tab, part) => {
+  window.localStorage.setItem(`isbn-${tab}`, part);
+  return {
+    type: SET_ISBN_PART,
+    payload: {
+      tab,
+      part,
+    },
+  };
+};

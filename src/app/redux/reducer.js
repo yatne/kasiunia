@@ -16,16 +16,16 @@ const initialState = {
   selectedTab: TAB_A,
   quizStages: {
     [TAB_A]: 0,
-    [TAB_D]: 0,
     [TAB_B]: 0,
     [TAB_C]: 0,
+    [TAB_D]: 0,
   },
   quizAnswers: {},
   isbn: {
-    [TAB_A]: '',
-    [TAB_D]: '',
-    [TAB_B]: '',
-    [TAB_C]: '',
+    [TAB_A]: window.localStorage.getItem(`isbn-${TAB_A}`) || '',
+    [TAB_B]: window.localStorage.getItem(`isbn-${TAB_B}`) || '',
+    [TAB_C]: window.localStorage.getItem(`isbn-${TAB_C}`) || '',
+    [TAB_D]: window.localStorage.getItem(`isbn-${TAB_D}`) || '',
   },
 };
 

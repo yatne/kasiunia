@@ -7,7 +7,6 @@ import logo from '../../../static/img/logo.png';
 const Navigation = () => {
   const location = useLocation();
   const gameUnlocked = useSelector((state) => state.gameUnlocked);
-  const secondPartUnlocked = useSelector((state) => state.secondPartUnlocked);
 
   return (
     <Nav>
@@ -22,20 +21,13 @@ const Navigation = () => {
           </NavItem>
         </Link>
         )}
-        {secondPartUnlocked && (
-        <Link to="/ajs">
-          <NavItem className={location.pathname === '/ajs' ? 'selected' : ''}>
-            DRUGI QUIZ
-          </NavItem>
-        </Link>
-        )}
       </NavItems>
     </Nav>
   );
 };
 const NavItems = styled.div`
     display: flex;
-    justify-content: space-end; 
+    justify-content: flex-end; 
 `;
 
 const Logo = styled.img`
