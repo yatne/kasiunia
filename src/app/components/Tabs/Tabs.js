@@ -54,28 +54,33 @@ const TabsNavItem = styled.li`
   align-items: center;
   height: 32px;
   cursor: pointer;
-  
+
   &:last-child {
     border-right: none;
   }
-  
+
   &.disabled {
     background-color: #eeeeee;
     cursor: auto;
     color: grey;
   }
+
   &.tab-0 {
     background: #D7E114;
   }
+
   &.tab-1 {
     background: #18B715;
   }
+
   &.tab-2 {
-    background: #3D19DC;
+    background: #5142ff;
   }
+
   &.tab-3 {
     background: #DB1AD2;
   }
+
   &.selected {
     height: 40px;
   }

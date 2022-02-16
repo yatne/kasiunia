@@ -23,10 +23,10 @@ const QuizPage = () => {
   }, []);
 
   const tabs = [
-    { label: 'A', component: TabA, id: TAB_A },
-    { label: 'B', component: TabB, id: TAB_B },
-    { label: 'C', component: TabC, id: TAB_C },
-    { label: 'D', component: TabD, id: TAB_D },
+    { label: 'Pytania', component: TabA, id: TAB_A },
+    { label: 'Social', component: TabB, id: TAB_B },
+    { label: 'Gierka', component: TabC, id: TAB_C },
+    { label: 'Po domu', component: TabD, id: TAB_D },
   ];
 
   return (

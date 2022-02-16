@@ -38,20 +38,24 @@ const NumberPart = styled.div`
   height: 24px;
   text-align: center;
   margin: 0 5px;
-  
+
   &.tab-a {
     border: 2px solid #D7E114;
   }
+
   &.tab-b {
     border: 2px solid #18B715;
   }
+
   &.tab-c {
-    border: 2px solid #3D19DC;
+    border: 2px solid #5142ff;
   }
+
   &.tab-d {
     border: 2px solid #DB1AD2;
   }
-  &.no-tab{
+
+  &.no-tab {
     border: 2px solid black;
   }
 `;
