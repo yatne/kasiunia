@@ -24,7 +24,7 @@ const QuizInput = ({
   };
 
   return (
-    <input value={value} onChange={(e) => handleChange(e)} />
+    <input value={value} onChange={(e) => handleChange(e)} style={{ width: '200px' }} />
   );
 };
 
