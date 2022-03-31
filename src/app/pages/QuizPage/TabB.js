@@ -2,12 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { TAB_B } from '../../redux/constants';
 import Quiz from '../../components/Quiz/Quiz';
+import domek from '../../../static/img/quiz/domek.png';
 
 const TabA = () => {
   const questions = [
     {
-      question: 'joł joł joł',
-      answers: ['hocki klocki myszka miki', 'chocki klocki myszka miki'],
+      answer: '12367',
+      number: true,
+      image: domek,
     },
     {
       question: 'Którna boku?',

@@ -19,15 +19,21 @@ const Quiz = ({ quizId, questions }) => {
 
   return (
     <div>
-      {questions.map((question, index) => (stage >= index ? (
-        <QuizQuestion
-          question={question.question}
-          onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
-          correct={stage > index}
-          answer={question.answer}
-          answers={question.answers}
-        />
-      ) : null))}
+      {questions.map((question, index) => {
+        if (stage < index) {
+          return null;
+        }
+        return (
+          <QuizQuestion
+            question={question.question}
+            onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
+            correct={stage > index}
+            answer={question.answer}
+            answers={question.answers}
+            image={question.image}
+          />
+        );
+      })}
     </div>
   );
 };
