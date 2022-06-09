@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Layaout from '../components/Layout/Layout';
 import bukiet from '../../static/img/bukiet.png';
+import Printable from '../components/Printable/Printable';
 
 const DesktopOnlyPage = () => (
   <Layaout>
@@ -12,6 +13,9 @@ const DesktopOnlyPage = () => (
       <Image src={bukiet} alt="bukiet" />
       <Text>Niestety do zabawy musisz użyć kompa.</Text>
     </Info>
+    <Printable>
+      <div style={{ backgroundColor: 'blue', width: '150px', height: '25px' }}>Pupa</div>
+    </Printable>
   </Layaout>
 );
 

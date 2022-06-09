@@ -23,10 +23,10 @@ const QuizPage = () => {
   }, []);
 
   const tabs = [
-    { label: 'Pytania', component: TabA, id: TAB_A },
-    { label: 'Social', component: TabB, id: TAB_B },
-    { label: 'Gierka', component: TabC, id: TAB_C },
-    { label: 'Po domu', component: TabD, id: TAB_D },
+    { label: 'Pytania i skojarzenia', component: TabA, id: TAB_A },
+    { label: 'Zabawy i zabawki', component: TabB, id: TAB_B },
+    { label: 'Specjalista It', component: TabC, id: TAB_C },
+    { label: 'Antoniego szkatułka Arduino', component: TabD, id: TAB_D },
   ];
 
   return (

@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsbnPart, setQuizStage } from '../../redux/actions';
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
+import FillQuestion from '../QuizQuestion/FillQuestion';
+import AudioQuestion from '../QuizQuestion/AudioQuestion';
+import MultipleChoiceQuestion from "../QuizQuestion/MultipleChoiceQuestion";
 
 const Quiz = ({ quizId, questions }) => {
   const dispatch = useDispatch();
@@ -22,6 +25,37 @@ const Quiz = ({ quizId, questions }) => {
       {questions.map((question, index) => {
         if (stage < index) {
           return null;
+        }
+        if (question.type === 'fill') {
+          return (
+            <FillQuestion
+              texts={question.texts}
+              blanks={question.blanks}
+              onAllCorrect={() => handleCorrectAnswer(index + 1)}
+              correct={stage > index}
+            />
+          );
+        }
+        if (question.type === 'multiple') {
+          return (
+            <MultipleChoiceQuestion
+              question={question.question}
+              answerConfig={question.answerConfig}
+              onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
+              correct={stage > index}
+            />
+          );
+        }
+        if (question.type === 'audio') {
+          return (
+            <AudioQuestion
+              question={question.question}
+              audio={question.audio}
+              answer={question.answer}
+              onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
+              correct={stage > index}
+            />
+          );
         }
         return (
           <QuizQuestion
