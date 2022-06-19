@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import { TAB_A } from '../../redux/constants';
 import Quiz from '../../components/Quiz/Quiz';
 import muzyczka from '../../../static/audio/muzyczka.mp3';
@@ -9,6 +10,7 @@ import miasto3 from '../../../static/img/miasto_3.jpeg';
 import miasto4 from '../../../static/img/miasto_4.jpeg';
 import miasto5 from '../../../static/img/miasto_5.jpeg';
 import miasto6 from '../../../static/img/miasto_6.webp';
+import { setIsbnPart } from '../../redux/actions';
 
 const TabA = () => {
   const questions = [
@@ -78,10 +80,12 @@ const TabA = () => {
     },
   ];
 
+  const dispatch = useDispatch();
+
   return (
     <TabContainer>
       <Header>Różne takie pytania</Header>
-      <Quiz quizId={TAB_A} questions={questions} />
+      <Quiz quizId={TAB_A} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_A, '978'))} />
     </TabContainer>
   );
 };

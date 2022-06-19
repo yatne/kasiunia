@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { setIsbnPart, setQuizStage } from '../../redux/actions';
+import { setQuizStage } from '../../redux/actions';
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
 import FillQuestion from '../QuizQuestion/FillQuestion';
 import AudioQuestion from '../QuizQuestion/AudioQuestion';
-import MultipleChoiceQuestion from "../QuizQuestion/MultipleChoiceQuestion";
+import MultipleChoiceQuestion from '../QuizQuestion/MultipleChoiceQuestion';
+import SuperSlideMeQuestion from '../QuizQuestion/SuperSlideMeQuestion';
 
-const Quiz = ({ quizId, questions }) => {
+const Quiz = ({ quizId, questions, onQuizFinished }) => {
   const dispatch = useDispatch();
   const stage = useSelector((state) => state.quizStages[quizId]);
 
   const handleCorrectAnswer = (questionNr) => {
     if (stage === questionNr - 1) {
       dispatch(setQuizStage(quizId, questionNr));
-    }
-    if (stage === 1) {
-      dispatch(setIsbnPart(quizId, '978'));
+      if (stage === questions.length - 1) {
+        onQuizFinished();
+      }
     }
   };
 
@@ -57,6 +58,14 @@ const Quiz = ({ quizId, questions }) => {
             />
           );
         }
+        if (question.type === 'superSlideMe') {
+          return (
+            <SuperSlideMeQuestion
+              onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
+              correct={stage > index}
+            />
+          );
+        }
         return (
           <QuizQuestion
             question={question.question}
@@ -65,6 +74,7 @@ const Quiz = ({ quizId, questions }) => {
             answer={question.answer}
             answers={question.answers}
             image={question.image}
+            InnerHtml={question.InnerHtml}
           />
         );
       })}
@@ -75,6 +85,7 @@ const Quiz = ({ quizId, questions }) => {
 Quiz.propTypes = {
   quizId: PropTypes.string.isRequired,
   questions: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onQuizFinished: PropTypes.func.isRequired,
 };
 
 export default Quiz;

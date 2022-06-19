@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import { TAB_B } from '../../redux/constants';
 import Quiz from '../../components/Quiz/Quiz';
 import domek from '../../../static/img/quiz/domek.png';
 import zwierz from '../../../static/img/quiz/zwierz.jpeg';
-import Printable from '../../components/Printable/Printable';
+import { setIsbnPart } from '../../redux/actions';
 
 const TabA = () => {
   const questions = [
@@ -42,13 +43,13 @@ const TabA = () => {
       image: zwierz,
     },
   ];
+
+  const dispatch = useDispatch();
+
   return (
     <TabContainer>
-      <Header>Różne takie łamigłówki</Header>
-      <Quiz quizId={TAB_B} questions={questions} />
-      <Printable>
-        <div style={{ backgroundColor: 'blue', width: '150px', height: '25px' }}>Pupa</div>
-      </Printable>
+      <Header>Zabawy i Zabawki</Header>
+      <Quiz quizId={TAB_B} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_B, '83'))} />
     </TabContainer>
   );
 };

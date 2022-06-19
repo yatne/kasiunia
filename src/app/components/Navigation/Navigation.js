@@ -43,6 +43,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
+  z-index: 10000;
 `;
 
 const NavItem = styled.div`
