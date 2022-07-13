@@ -7,6 +7,7 @@ import FillQuestion from '../QuizQuestion/FillQuestion';
 import AudioQuestion from '../QuizQuestion/AudioQuestion';
 import MultipleChoiceQuestion from '../QuizQuestion/MultipleChoiceQuestion';
 import SuperSlideMeQuestion from '../QuizQuestion/SuperSlideMeQuestion';
+import OrganiseOrderQuestion from '../QuizQuestion/OrganiseOrderQuestion';
 
 const Quiz = ({ quizId, questions, onQuizFinished }) => {
   const dispatch = useDispatch();
@@ -58,6 +59,16 @@ const Quiz = ({ quizId, questions, onQuizFinished }) => {
             />
           );
         }
+        if (question.type === 'organise') {
+          return (
+            <OrganiseOrderQuestion
+              question={question.question}
+              correct={stage > index}
+              onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
+              tags={question.tags}
+            />
+          );
+        }
         if (question.type === 'superSlideMe') {
           return (
             <SuperSlideMeQuestion
@@ -82,10 +93,8 @@ const Quiz = ({ quizId, questions, onQuizFinished }) => {
   );
 };
 
-Quiz.propTypes = {
-  quizId: PropTypes.string.isRequired,
+Quiz.propTypes = { quizId: PropTypes.string.isRequired,
   questions: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onQuizFinished: PropTypes.func.isRequired,
-};
+  onQuizFinished: PropTypes.func.isRequired };
 
 export default Quiz;
