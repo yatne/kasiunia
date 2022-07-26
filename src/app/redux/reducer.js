@@ -14,19 +14,15 @@ const initialState = {
   gameUnlocked: window.localStorage.getItem('gameUnlocked') || false,
   secondPartUnlocked: window.localStorage.getItem('secondPartUnlocked') || false,
   selectedTab: TAB_A,
-  quizStages: {
-    [TAB_A]: 0,
+  quizStages: { [TAB_A]: 0,
     [TAB_B]: 0,
     [TAB_C]: 0,
-    [TAB_D]: 0,
-  },
+    [TAB_D]: 0 },
   quizAnswers: {},
-  isbn: {
-    [TAB_A]: window.localStorage.getItem(`isbn-${TAB_A}`) || '',
+  isbn: { [TAB_A]: window.localStorage.getItem(`isbn-${TAB_A}`) || '',
     [TAB_B]: window.localStorage.getItem(`isbn-${TAB_B}`) || '',
     [TAB_C]: window.localStorage.getItem(`isbn-${TAB_C}`) || '',
-    [TAB_D]: window.localStorage.getItem(`isbn-${TAB_D}`) || '',
-  },
+    [TAB_D]: window.localStorage.getItem(`isbn-${TAB_D}`) || '' },
 };
 
 export default function appReducer(state = initialState, action) {
@@ -34,31 +30,19 @@ export default function appReducer(state = initialState, action) {
     case UNLOCK_GAME:
       return { ...state, gameUnlocked: true };
     case SET_SELECTED_TAB:
-      return {
-        ...state,
-        selectedTab: action.payload.tab,
-      };
+      return { ...state,
+        selectedTab: action.payload.tab };
     case SET_ANSWER:
-      return {
-        ...state,
-        quizAnswers: { ...state.quizAnswers, [action.payload.questionId]: action.payload.answer },
-      };
+      return { ...state,
+        quizAnswers: { ...state.quizAnswers, [action.payload.questionId]: action.payload.answer } };
     case SET_QUIZ_STAGE:
-      return {
-        ...state,
-        quizStages: {
-          ...state.quizStages,
-          [action.payload.tab]: action.payload.stage,
-        },
-      };
+      return { ...state,
+        quizStages: { ...state.quizStages,
+          [action.payload.tab]: action.payload.stage } };
     case SET_ISBN_PART:
-      return {
-        ...state,
-        isbn: {
-          ...state.isbn,
-          [action.payload.tab]: action.payload.part,
-        },
-      };
+      return { ...state,
+        isbn: { ...state.isbn,
+          [action.payload.tab]: action.payload.part } };
     default:
       return state;
   }

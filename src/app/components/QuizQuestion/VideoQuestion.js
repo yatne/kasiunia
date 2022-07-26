@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import QuizInput from '../QuizInput/QuizInput';
 
-const MathQuestion = ({
-  answer, onCorrectAnswer, correct, image, questionId,
+const VideoQuestion = ({
+  question, answer, onCorrectAnswer, correct, video,
 }) => {
   let style = 'border: 1px solid black';
   if (correct) {
@@ -13,20 +13,33 @@ const MathQuestion = ({
 
   return (
     <QuestionContainer borderStyle={style}>
-      <QuestionImage src={image} alt="some math" />
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/iX9TmRZHZdQ"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+      <Question>{question}</Question>
       <QuizInput
         onCorrectAnswer={(correctAnswer) => onCorrectAnswer(correctAnswer)}
         answer={answer}
-        onlyNumbers
-        questionId={questionId}
+        questionId={question}
       />
     </QuestionContainer>
   );
 };
 
-const QuestionImage = styled.img`
-  height: 100%;
-  max-height: 60px;
+const Video = styled.video`
+  margin: 0 20px 0 0;
+  padding: 0;
+`;
+
+const Question = styled.div`
+  display: block;
+  margin-right: 20px;
 `;
 
 const QuestionContainer = styled.div`
@@ -41,16 +54,16 @@ const QuestionContainer = styled.div`
   ${(props) => props.borderStyle};
 `;
 
-MathQuestion.propTypes = {
+VideoQuestion.propTypes = {
+  question: PropTypes.string,
   answer: PropTypes.string,
   onCorrectAnswer: PropTypes.func.isRequired,
   correct: PropTypes.bool,
-  image: PropTypes.string,
-  questionId: PropTypes.string.isRequired,
+  video: PropTypes.string.isRequired,
 };
 
-MathQuestion.defaultProps = { answer: '',
-  correct: false,
-  image: null };
+VideoQuestion.defaultProps = { question: '',
+  answer: '',
+  correct: false };
 
-export default MathQuestion;
+export default VideoQuestion;

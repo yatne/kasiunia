@@ -56,10 +56,8 @@ AudioQuestion.propTypes = {
   audio: PropTypes.string.isRequired,
 };
 
-AudioQuestion.defaultProps = {
-  question: '',
+AudioQuestion.defaultProps = { question: '',
   answer: '',
-  correct: false,
-};
+  correct: false };
 
 export default AudioQuestion;

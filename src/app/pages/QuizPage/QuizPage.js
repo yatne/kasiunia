@@ -3,9 +3,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout';
 import Tabs from '../../components/Tabs/Tabs';
-import {
-  TAB_A, TAB_B, TAB_C, TAB_D,
-} from '../../redux/constants';
+import { TAB_A, TAB_B, TAB_C, TAB_D } from '../../redux/constants';
 import TabA from './TabA';
 import TabB from './TabB';
 import TabC from './TabC';

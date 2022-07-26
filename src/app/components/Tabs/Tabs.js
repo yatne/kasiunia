@@ -86,8 +86,6 @@ const TabsNavItem = styled.li`
   }
 `;
 
-Tabs.propTypes = {
-  tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
+Tabs.propTypes = { tabs: PropTypes.arrayOf(PropTypes.object).isRequired };
 
 export default Tabs;

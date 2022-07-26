@@ -37,10 +37,8 @@ const Image = styled.img`
   margin-bottom: 10px;
 `;
 
-GeoImageQuestion.propTypes = {
-  question: PropTypes.string.isRequired,
+GeoImageQuestion.propTypes = { question: PropTypes.string.isRequired,
   correct: PropTypes.bool.isRequired,
-  images: PropTypes.string.isRequired,
-};
+  images: PropTypes.string.isRequired };
 
 export default GeoImageQuestion;

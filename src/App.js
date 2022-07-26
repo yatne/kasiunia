@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
+import { BrowserRouter as Router,
   Switch,
-  Route,
-} from 'react-router-dom';
+  Route } from 'react-router-dom';
 import styled from 'styled-components';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';

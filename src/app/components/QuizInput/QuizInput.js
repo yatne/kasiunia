@@ -36,10 +36,8 @@ QuizInput.propTypes = {
   answers: PropTypes.arrayOf(PropTypes.string),
 };
 
-QuizInput.defaultProps = {
-  answer: '',
+QuizInput.defaultProps = { answer: '',
   onlyNumbers: false,
-  answers: [],
-};
+  answers: [] };
 
 export default QuizInput;

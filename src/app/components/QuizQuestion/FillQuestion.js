@@ -7,9 +7,7 @@ import { setAnswer } from '../../redux/actions';
 
 const getAnswerForQuestion = (id) => (store) => store.quizAnswers[id];
 
-const FillQuestion = ({
-  texts, blanks, correct, onAllCorrect,
-}) => {
+const FillQuestion = ({ texts, blanks, correct, onAllCorrect }) => {
   const dispatch = useDispatch();
   let style = 'border: 1px solid black';
   if (correct) {
@@ -24,15 +22,11 @@ const FillQuestion = ({
     if (blanks[index]) {
       const blankId = blanks[index] + index;
       const value = useSelector(getAnswerForQuestion(blankId));
-      arr.push({
-        type: 'input', answer: blanks[index], id: blankId, value,
-      });
+      arr.push({ type: 'input', answer: blanks[index], id: blankId, value });
       answerArr.push(
-        {
-          id: blankId,
+        { id: blankId,
           correctValue: blanks[index],
-          correct: value && blanks[index].toLowerCase() === value.toLowerCase(),
-        },
+          correct: value && blanks[index].toLowerCase() === value.toLowerCase() },
       );
     }
   });
@@ -75,15 +69,11 @@ const QuestionContainer = styled.div`
   ${(props) => props.borderStyle};
 `;
 
-FillQuestion.propTypes = {
-  texts: PropTypes.arrayOf(string).isRequired,
+FillQuestion.propTypes = { texts: PropTypes.arrayOf(string).isRequired,
   blanks: PropTypes.arrayOf(string).isRequired,
   correct: PropTypes.bool,
-  onAllCorrect: PropTypes.func.isRequired,
-};
+  onAllCorrect: PropTypes.func.isRequired };
 
-FillQuestion.defaultProps = {
-  correct: false,
-};
+FillQuestion.defaultProps = { correct: false };
 
 export default FillQuestion;

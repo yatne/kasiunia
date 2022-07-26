@@ -8,6 +8,7 @@ import AudioQuestion from '../QuizQuestion/AudioQuestion';
 import MultipleChoiceQuestion from '../QuizQuestion/MultipleChoiceQuestion';
 import SuperSlideMeQuestion from '../QuizQuestion/SuperSlideMeQuestion';
 import OrganiseOrderQuestion from '../QuizQuestion/OrganiseOrderQuestion';
+import VideoQuestion from "../QuizQuestion/VideoQuestion";
 
 const Quiz = ({ quizId, questions, onQuizFinished }) => {
   const dispatch = useDispatch();
@@ -53,6 +54,17 @@ const Quiz = ({ quizId, questions, onQuizFinished }) => {
             <AudioQuestion
               question={question.question}
               audio={question.audio}
+              answer={question.answer}
+              onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
+              correct={stage > index}
+            />
+          );
+        }
+        if (question.type === 'video') {
+          return (
+            <VideoQuestion
+              question={question.question}
+              video={question.video}
               answer={question.answer}
               onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
               correct={stage > index}

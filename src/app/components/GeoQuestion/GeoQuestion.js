@@ -20,9 +20,7 @@ const QuestionContainer = styled.div`
   background: ${(props) => (props.correct ? '#bbffbb' : 'white')};
 `;
 
-GeoQuestion.propTypes = {
-  question: PropTypes.string.isRequired,
-  correct: PropTypes.bool.isRequired,
-};
+GeoQuestion.propTypes = { question: PropTypes.string.isRequired,
+  correct: PropTypes.bool.isRequired };
 
 export default GeoQuestion;

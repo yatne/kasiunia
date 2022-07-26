@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const MultipleChoiceQuestion = ({
-  question, answerConfig, correct, onCorrectAnswer,
-}) => {
+const MultipleChoiceQuestion = ({ question, answerConfig, correct, onCorrectAnswer }) => {
   let style = 'border: 1px solid black';
   if (correct) {
     style = 'border: 2px solid green';
@@ -15,19 +13,15 @@ const MultipleChoiceQuestion = ({
     return configValue.answer === undefined || configValue.answer === value;
   };
 
-  const [options, setOptions] = useState(answerConfig.map((config) => ({
-    label: config.label,
-    correct: checkIfInputCorrect(config.label, false),
-  })));
+  const [options, setOptions] = useState(answerConfig.map((config) => ({ label: config.label,
+    correct: checkIfInputCorrect(config.label, false) })));
 
   const handleChange = (e, label) => {
     const isChecked = e.target.checked;
     const newOptions = options.map((option) => {
       if (option.label === label) {
-        return {
-          label: option.label,
-          correct: checkIfInputCorrect(label, isChecked),
-        };
+        return { label: option.label,
+          correct: checkIfInputCorrect(label, isChecked) };
       } return option;
     });
     setOptions(newOptions);
@@ -87,16 +81,12 @@ const QuestionContainer = styled.div`
   ${(props) => props.borderStyle};
 `;
 
-MultipleChoiceQuestion.propTypes = {
-  question: PropTypes.string,
+MultipleChoiceQuestion.propTypes = { question: PropTypes.string,
   answerConfig: PropTypes.arrayOf(PropTypes.object).isRequired,
   onCorrectAnswer: PropTypes.func.isRequired,
-  correct: PropTypes.bool,
-};
+  correct: PropTypes.bool };
 
-MultipleChoiceQuestion.defaultProps = {
-  question: '',
-  correct: false,
-};
+MultipleChoiceQuestion.defaultProps = { question: '',
+  correct: false };
 
 export default MultipleChoiceQuestion;

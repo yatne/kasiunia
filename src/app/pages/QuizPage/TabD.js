@@ -7,10 +7,8 @@ import Quiz from '../../components/Quiz/Quiz';
 
 const TabA = () => {
   const dispatch = useDispatch();
-  const questions = [{
-    question: 'co tam?',
-    answer: 'ok',
-  }];
+  const questions = [{ question: 'co tam?',
+    answer: 'ok' }];
 
   return (
     <TabContainer>

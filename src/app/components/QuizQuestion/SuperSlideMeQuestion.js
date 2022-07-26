@@ -4,9 +4,7 @@ import styled from 'styled-components';
 import { SuperSlideMe } from 'react-super-slide-me';
 import ssm from '../../../static/img/ssm.png';
 
-const SuperSlideMeQuestion = ({
-  onCorrectAnswer, correct,
-}) => {
+const SuperSlideMeQuestion = ({ onCorrectAnswer, correct }) => {
   let style = 'border: 1px solid black';
   if (correct) {
     style = 'border: 2px solid green';
@@ -45,13 +43,9 @@ const InnerContainer = styled.div`
   justify-content: space-between;
 `;
 
-SuperSlideMeQuestion.propTypes = {
-  onCorrectAnswer: PropTypes.func.isRequired,
-  correct: PropTypes.bool,
-};
+SuperSlideMeQuestion.propTypes = { onCorrectAnswer: PropTypes.func.isRequired,
+  correct: PropTypes.bool };
 
-SuperSlideMeQuestion.defaultProps = {
-  correct: false,
-};
+SuperSlideMeQuestion.defaultProps = { correct: false };
 
 export default SuperSlideMeQuestion;

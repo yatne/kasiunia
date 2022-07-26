@@ -43,9 +43,7 @@ InlineInput.propTypes = {
   initialValue: PropTypes.string,
 };
 
-InlineInput.defaultProps = {
-  correct: false,
-  initialValue: '',
-};
+InlineInput.defaultProps = { correct: false,
+  initialValue: '' };
 
 export default InlineInput;
