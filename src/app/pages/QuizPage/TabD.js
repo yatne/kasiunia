@@ -7,8 +7,18 @@ import Quiz from '../../components/Quiz/Quiz';
 
 const TabA = () => {
   const dispatch = useDispatch();
-  const questions = [{ question: 'co tam?',
-    answer: 'ok' }];
+  const questions = [
+    { question: 'W laboratorium wielkiego elektronika, w miejscu do którego zapuszczają się tylko nieliczni, nad szufladami EITI, znajdź drewniany twór, który niegdyś skrywał w sobie dziecięce puzzle.',
+      answer: 'pumpernikiel' },
+    { question: 'By pumpernikla pokonać musisz zajrzeć do skrzyni na której nocą przebywasz. Jeśli ruch się nie powiedzie, próbuj ponownie i obserwuj zmiany.',
+      answer: 'jabadabadu' },
+    { question: 'Odpowiedź co zrobić masz znajdziesz tam gdzie ubrania są bez plam.',
+      answer: 'jaksydraksy' },
+    { question: 'Sprawdź miejsce gdzie możesz zaczerpnąć świerzego, miejskiego powietrza. Gdy rozwiążesz podpowiedź, musisz uzbroić się w cierpliwość. Złożone maszyny wymagają czasu.',
+      answer: 'olejupa' },
+    { question: 'Gdy stary do dom wraca, w zamku nim obraca.',
+      answer: 'koniec' },
+  ];
 
   return (
     <TabContainer>
