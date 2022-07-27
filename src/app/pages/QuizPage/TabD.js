@@ -22,7 +22,7 @@ const TabA = () => {
 
   return (
     <TabContainer>
-      <Header>Test z wiedzy ogólnej oraz popkultury</Header>
+      <Header>ASA</Header>
       <Quiz quizId={TAB_D} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_D, '836'))} />
     </TabContainer>
   );

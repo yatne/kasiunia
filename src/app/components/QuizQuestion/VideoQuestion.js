@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import QuizInput from '../QuizInput/QuizInput';
 
-const VideoQuestion = ({
-  question, answer, onCorrectAnswer, correct, video,
-}) => {
+const VideoQuestion = ({ question, answer, onCorrectAnswer, correct }) => {
   let style = 'border: 1px solid black';
   if (correct) {
     style = 'border: 2px solid green';
@@ -32,11 +30,6 @@ const VideoQuestion = ({
   );
 };
 
-const Video = styled.video`
-  margin: 0 20px 0 0;
-  padding: 0;
-`;
-
 const Question = styled.div`
   display: block;
   margin-right: 20px;
@@ -54,13 +47,10 @@ const QuestionContainer = styled.div`
   ${(props) => props.borderStyle};
 `;
 
-VideoQuestion.propTypes = {
-  question: PropTypes.string,
+VideoQuestion.propTypes = { question: PropTypes.string,
   answer: PropTypes.string,
   onCorrectAnswer: PropTypes.func.isRequired,
-  correct: PropTypes.bool,
-  video: PropTypes.string.isRequired,
-};
+  correct: PropTypes.bool };
 
 VideoQuestion.defaultProps = { question: '',
   answer: '',

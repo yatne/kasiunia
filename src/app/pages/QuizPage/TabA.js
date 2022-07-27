@@ -17,7 +17,7 @@ const TabA = () => {
     { question: 'Co Fidelus wniosła na teren festiwalu?',
       answer: 'Bułki' },
     { question: 'Bułki?',
-      answers: ['Bułki', 'tak'] },
+      answers: ['bułki', 'tak'] },
     { type: 'audio',
       question: 'Pytanie muzyczne. Podaj tytuł tego utworu.',
       answer: 'Wave',

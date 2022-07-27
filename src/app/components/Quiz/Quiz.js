@@ -8,7 +8,7 @@ import AudioQuestion from '../QuizQuestion/AudioQuestion';
 import MultipleChoiceQuestion from '../QuizQuestion/MultipleChoiceQuestion';
 import SuperSlideMeQuestion from '../QuizQuestion/SuperSlideMeQuestion';
 import OrganiseOrderQuestion from '../QuizQuestion/OrganiseOrderQuestion';
-import VideoQuestion from "../QuizQuestion/VideoQuestion";
+import VideoQuestion from '../QuizQuestion/VideoQuestion';
 
 const Quiz = ({ quizId, questions, onQuizFinished }) => {
   const dispatch = useDispatch();

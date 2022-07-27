@@ -13,7 +13,7 @@ const TabA = () => {
   const dispatch = useDispatch();
 
   const questions = [
-    { question: ' ',
+    { question: '           ',
       image: print,
       answer: 'kabanos' },
     { question: '   ',
@@ -43,6 +43,7 @@ const TabA = () => {
         <a href="https://yatne.github.io/przychodzibabadolekarza?kasia" rel="noreferrer" style={{ color: 'blue' }} target="_blank"> żartach</a>
       </span>
     ),
+    question: '             ',
     answer: 'pasztetowa' },
     { type: 'superSlideMe' },
   ];
