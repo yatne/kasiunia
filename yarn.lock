@@ -9649,10 +9649,10 @@ react-scripts@4.0.3:
   optionalDependencies:
     fsevents "^2.1.3"
 
-react-super-slide-me@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/react-super-slide-me/-/react-super-slide-me-1.1.6.tgz#30c232f284bcd680c5e391a5ae7e142b0c9f62e9"
-  integrity sha512-qGucYltx5D5uUjTB3gINwLn8Le8MbYM3JEuVxvy09+mFNqa0GwMMBYm8aH29N0Xk34/Sq/SzBMI03e8wYVLOPA==
+react-super-slide-me@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/react-super-slide-me/-/react-super-slide-me-1.1.7.tgz#d46a32cb627d0e7868c81329096f4b7ec59812ee"
+  integrity sha512-cmYa3QJ2kN38MmKuEvrMRby3EzrEMepXvuUrmeih4VibJoD73OkorNdVJwW/0GkPXp43vpJYFG6auBKym3DVwg==
   dependencies:
     "@reduxjs/toolkit" "^1.8.1"
     react-redux "^8.0.1"
