@@ -9,7 +9,7 @@ import stolat from '../../../static/img/stolat.png';
 import kwiaty from '../../../static/img/kwiaty.jpeg';
 import kasiakasia from '../../../static/img/kasiakasia.png';
 import ptasiemleczko from '../../../static/img/ptasie-mleczko.png';
-import thirtyOne from '../../../static/img/31.png';
+import thirtyTwo from '../../../static/img/32.png';
 import zozole from '../../../static/img/zozole.png';
 import urodziny from '../../../static/audio/urodziny.mp3';
 
@@ -38,9 +38,9 @@ const LandingPage = () => {
         <Frame>
           <ImagesWrapper>
             <StolatImage src={stolat} alt="sto lat!" />
-            <ThirtyOneImage src={thirtyOne} alt="31" />
-            <SecondThirtyOneImage src={thirtyOne} alt="31" />
-            <ThirdThirtyOneImage src={thirtyOne} alt="31" />
+            <ThirtyTwoImage src={thirtyTwo} alt="32" />
+            <SecondThirtyTwoImage src={thirtyTwo} alt="32" />
+            <ThirdThirtyTwoImage src={thirtyTwo} alt="32" />
             <KwiatyImage src={kwiaty} alt="kwaty" />
             <KasiaKasiaImage src={kasiakasia} alt="uśmiechnięta młoda dziewczyna" />
             <PtasieMleczkoImage src={ptasiemleczko} alt="ptasie mleczko" />
@@ -85,7 +85,7 @@ const StolatImage = styled.img`
   top: 0;
 `;
 
-const ThirtyOneImage = styled.img`
+const ThirtyTwoImage = styled.img`
   top: 200px;
   margin-left: -500px;
   width: 80px;
@@ -98,7 +98,7 @@ const ThirtyOneImage = styled.img`
   animation-timing-function: cubic-bezier();
 `;
 
-const SecondThirtyOneImage = styled.img`
+const SecondThirtyTwoImage = styled.img`
   position: absolute;
   top: 100px;
   margin-left: 500px;
@@ -111,7 +111,7 @@ const SecondThirtyOneImage = styled.img`
   animation-timing-function: cubic-bezier();
 `;
 
-const ThirdThirtyOneImage = styled.img`
+const ThirdThirtyTwoImage = styled.img`
   position: absolute;
   top: 100px;
   margin-left: 500px;

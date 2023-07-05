@@ -4,6 +4,52 @@ import styled from 'styled-components';
 import { SuperSlideMe } from 'react-super-slide-me';
 import ssm from '../../../static/img/ssm.png';
 
+const customLevels = [
+  'xxxxxxx'
+  + 'x....sx'
+  + 'x.xxxxx'
+  + 'x.....x'
+  + 'xxxxx.x'
+  + 'xe....x'
+  + 'xxxxxxx',
+
+  'xxxxxxx'
+  + 'xsxrxex'
+  + 'x.rrr.x'
+  + 'x.rrr.x'
+  + 'x.rrr.x'
+  + 'r.....x'
+  + 'rxrrrrr',
+
+  'xcxxxxx'
+  + 'xo...xx'
+  + 'xsxx.xx'
+  + 'x.e..xx'
+  + 'x.xxxxx'
+  + 'x.xxxrr'
+  + 'x.xxxrr',
+
+  'xx......sx'
+  + 'xx.xxxxxxx'
+  + 'xx.xxxxxxx'
+  + 'x........x'
+  + 'x.xxxxxxxx'
+  + 'x.xxxx..bx'
+  + 'x.xxxx.xxx'
+  + 'x.xxx..g.x'
+  + 'x.xxx.xxxx'
+  + 'x....g..ex',
+
+  'xbxxxxxx'
+  + 'xgxxxxxx'
+  + 'x....xxx'
+  + 'xsxx.xxx'
+  + 'x.g..xxx'
+  + 'x.x.xxxx'
+  + 'x.x..xrx'
+  + 'x.xx.erx',
+];
+
 const SuperSlideMeQuestion = ({ onCorrectAnswer, correct }) => {
   let style = 'border: 1px solid black';
   if (correct) {
@@ -14,7 +60,7 @@ const SuperSlideMeQuestion = ({ onCorrectAnswer, correct }) => {
     <QuestionContainer borderStyle={style}>
       <QuestionImage src={ssm} />
       <InnerContainer>
-        <SuperSlideMe levelConfig={{ levelFilter: 'demo' }} onLastLevelReached={() => onCorrectAnswer()} />
+        <SuperSlideMe levelConfig={{ levelFilter: 'onlyCustom' }} customLevels={customLevels} onLastLevelReached={() => onCorrectAnswer()} />
       </InnerContainer>
     </QuestionContainer>
   );

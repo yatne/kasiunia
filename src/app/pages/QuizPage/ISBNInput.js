@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { TAB_A, TAB_C, TAB_B, TAB_D } from '../../redux/constants';
+import { TAB_A, TAB_B } from '../../redux/constants';
 
 const ISBNInput = () => {
   const isbnParts = useSelector((state) => state.isbn);
@@ -11,21 +11,8 @@ const ISBNInput = () => {
       <NumberPart className="tab-a">
         {isbnParts[TAB_A]}
       </NumberPart>
-      -
       <NumberPart className="tab-b">
         {isbnParts[TAB_B]}
-      </NumberPart>
-      -
-      <NumberPart className="tab-c">
-        {isbnParts[TAB_C]}
-      </NumberPart>
-      -
-      <NumberPart className="tab-d">
-        {isbnParts[TAB_D]}
-      </NumberPart>
-      -
-      <NumberPart className="no-tab">
-        5
       </NumberPart>
     </InputContainer>
   );

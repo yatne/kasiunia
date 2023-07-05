@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Layaout from '../components/Layout/Layout';
 import bukiet from '../../static/img/bukiet.png';
-import Printable from '../components/Printable/Printable';
-import clue from '../../static/img/clue.png';
 
 const DesktopOnlyPage = () => {
   const [count, setCount] = useState(0);
@@ -15,33 +13,11 @@ const DesktopOnlyPage = () => {
           WSZYSTKIEGO NAJLEPSZEGO KASIA!!
         </Header>
         <Image src={bukiet} alt="bukiet" />
-        <Text>Niestety do zabawy musisz użyć kompa.</Text>
+        <Text>Niestety do zabawy znowu musisz użyć kompa.</Text>
       </Info>
-      <HiddenClue>
-        Szyneczka
-      </HiddenClue>
-      <Printable>
-        <HiddenImage src={clue} />
-      </Printable>
     </Layaout>
   );
 };
-
-const HiddenImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
-
-const HiddenClue = styled.div`
-  background-color: white;
-  position: absolute;
-  z-index: 100;
-  left: calc(50% - 20px);
-  margin-top: 50px;
-`;
 
 const Image = styled.img`
   width: 100%;
