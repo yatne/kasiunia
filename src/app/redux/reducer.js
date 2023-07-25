@@ -13,7 +13,7 @@ import {
 const initialState = {
   gameUnlocked: window.localStorage.getItem('gameUnlocked') || false,
   secondPartUnlocked: window.localStorage.getItem('secondPartUnlocked') || false,
-  selectedTab: TAB_A,
+  selectedTab: TAB_B,
   quizStages: { [TAB_A]: 0,
     [TAB_B]: 0,
     [TAB_C]: 0,

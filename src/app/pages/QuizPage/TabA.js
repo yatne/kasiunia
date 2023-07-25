@@ -9,6 +9,10 @@ const TabA = () => {
   const questions = [
     { type: 'superSlideMe' },
     { question: 'jak jest?', answer: 'super' },
+    { question: 'rozejrzyj się dokładnie w swoich rozszerzeniach chrome. Tam powinno być takie Z \n1.', answer: 'chlebek' },
+    { question: '2.', answer: 'paróweczka' },
+    { question: '3.', answer: 'mydełko' },
+
     { InnerHtml: () => (
       <span>
         No to zstało tylko wygrać

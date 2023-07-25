@@ -13,6 +13,7 @@ const QuizQuestion = ({
   if (singular) {
     style = 'box-shadow: 1px 2px #dddddd';
   }
+  const tableId = answers ? answers[0] : '';
 
   return (
     <QuestionContainer borderStyle={style}>
@@ -27,7 +28,7 @@ const QuizQuestion = ({
           answer={answer}
           answers={answers}
           onlyNumbers={onlyNumbers}
-          questionId={question}
+          questionId={question + answer + tableId}
         />
       </InnerContainer>
     </QuestionContainer>

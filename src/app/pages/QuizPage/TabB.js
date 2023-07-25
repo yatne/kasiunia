@@ -4,41 +4,129 @@ import { useDispatch } from 'react-redux';
 import { TAB_B } from '../../redux/constants';
 import Quiz from '../../components/Quiz/Quiz';
 import { setIsbnPart } from '../../redux/actions';
+import b1 from '../../../static/img/32/b1.webp';
+import b2 from '../../../static/img/32/b2.webp';
+import b3 from '../../../static/img/32/b3.webp';
+import b4 from '../../../static/img/32/b4.webp';
+import b5 from '../../../static/img/32/b5.webp';
+import b6 from '../../../static/img/32/b6.png';
+import bu1 from '../../../static/img/32/bu1.webp';
+import bu2 from '../../../static/img/32/bu2.webp';
+import bu3 from '../../../static/img/32/bu3.webp';
+import bu4 from '../../../static/img/32/bu4.webp';
+import bu5 from '../../../static/img/32/bu5.webp';
+import bu6 from '../../../static/img/32/bu6.webp';
+import bu7 from '../../../static/img/32/bu7.webp';
+import bu8 from '../../../static/img/32/bu8.webp';
+import bi0 from '../../../static/img/32/bi0.png';
+import bi1 from '../../../static/img/32/bi1.png';
+import bi2 from '../../../static/img/32/bi2.png';
+import bi3 from '../../../static/img/32/bi3.png';
+import p0 from '../../../static/img/32/p0.webp';
+import p1 from '../../../static/img/32/p1.webp';
+import p2 from '../../../static/img/32/p2.webp';
+import p3 from '../../../static/img/32/p3.webp';
+import p4 from '../../../static/img/32/p4.webp';
+import p5 from '../../../static/img/32/p5.webp';
+import p6 from '../../../static/img/32/p6.webp';
+import p7 from '../../../static/img/32/p7.webp';
+import d1 from '../../../static/img/32/d1.webp';
+import d2 from '../../../static/img/32/d2.jpeg';
+import d3 from '../../../static/img/32/d3.jpg';
+import pir from '../../../static/img/32/pir.webp';
+import s1 from '../../../static/img/32/s1.png';
+import s2 from '../../../static/img/32/s2.webp';
+import bl1 from '../../../static/img/32/bl1.webp';
+import bl2 from '../../../static/img/32/bl2.webp';
+import sa1 from '../../../static/img/32/sa1.webp';
+import pr1 from '../../../static/img/32/pr1.webp';
+import pr2 from '../../../static/img/32/pr2.jpeg';
 
 const TabA = () => {
   const questions = [
-    { type: 'organise',
-      question: 'ustaw chronologicznie wyjazdy',
-      tags: [
-        { id: 1, content: 'Janek', order: 7, data: '2018-03-19' },
-        { id: 2, content: 'Stachu', order: 13, data: '2021-02-25' },
-        { id: 3, content: 'Sara S.', order: 2, data: '2010' },
-        { id: 4, content: 'Zuzia', order: 1, data: '2004' },
-        { id: 5, content: 'Sara B.', order: 6, data: '2017' },
-        { id: 6, content: 'Laura', order: 9, data: '2019-03-18' },
-        { id: 7, content: 'Franek', order: 21, data: '2022-01-15' },
-        { id: 8, content: 'Alicja', order: 11, data: '2020-10~26' },
-        { id: 9, content: 'Julka', order: 14, data: '2021-04-07' },
-        { id: 10, content: 'Kazik', order: 12, data: '2021-01' },
-        { id: 11, content: 'Tadzik', order: 19, data: '2021-12-21' },
-        { id: 12, content: 'Mania', order: 18, data: '2021-12-21 + 1 mania starsza o minute' },
-        { id: 13, content: 'Feliks', order: 22, data: '2022-07-probably' },
-        { id: 14, content: 'Kosma', order: 8, data: '2018-09?' },
-        { id: 15, content: 'Jerzyk', order: 16, data: '2021-08~13' },
-        { id: 16, content: 'Tymek', order: 17, data: '2021-08-23' },
-        { id: 17, content: 'Stanisław Cz.', order: 3, data: '2013-09' },
-        { id: 18, content: 'Tosia Cz.', order: 4, data: '2014-09' },
-        { id: 21, content: 'Cezary', order: 10, data: '2020-07-21' },
-        { id: 22, content: 'Juliusz', order: 20, data: '2022-03-09' },
-      ] },
+    { image: b1,
+      answer: 'barbamama' },
+    { image: b2,
+      question: '',
+      answers: ['barbartek', 'barbabartek'] },
+    { image: b3,
+      answer: 'barbabłysk' },
+    { image: b4,
+      answer: 'barbalesio' },
+    { image: b5,
+      answers: ['barbabela', 'barbabella'] },
+    { image: b6,
+      answer: 'lolita' },
+    { image: bu2,
+      answer: 'chilli' },
+    { image: bu1,
+      answers: ['bandżi', 'bungee'] },
+    { image: bu3,
+      answers: ['mufinka', 'muffinka'] },
+    { image: bu4,
+      answer: 'stopka' },
+    { image: bu5,
+      answer: 'kołnierzyk' },
+    { image: bu6,
+      answers: ['pani matylda', 'matylda'] },
+    { image: bu7,
+      answer: 'judo' },
+    { image: bu8,
+      answer: 'wafel' },
+    { image: bi0,
+      answer: 'charlie' },
+    { image: bi1,
+      answer: 'koko' },
+    { image: bi2,
+      answer: 'amma' },
+    { image: bi3,
+      answer: 'pola' },
+    { image: p0,
+      answer: 'chickaletta' },
+    { image: p1,
+      answers: ['otis', 'wujek otis'] },
+    { image: p2,
+      answer: 'ace sorensen' },
+    { image: p3,
+      answers: ['apollo super pies', 'apollo superpies', 'super pies apollo', 'superpies apollo'] },
+    { image: p4,
+      answer: 'liberty' },
+    { image: p5,
+      answer: 'francois turbot' },
+    { image: p6,
+      answers: ['rex', 'reks'] },
+    { image: p7,
+      answer: 'farmerka yumi' },
+    { image: d1,
+      answers: ['maka paka', 'makka pakka'] },
+    { image: d2,
+      answer: 'igi pigiel' },
+    { image: d3,
+      answer: 'tomblibusie' },
+    { image: pir,
+      answer: 'kapitan kapitańska' },
+    { image: s1,
+      answer: 'superpyra' },
+    { image: s2,
+      answer: 'groszka zła' },
+    { image: bl1,
+      answer: 'blaze' },
+    { image: bl2,
+      answers: ['crusher', 'kraszer'] },
+    { image: sa1,
+      answer: 'santiago' },
+    { image: pr1,
+      answer: 'pan robótka' },
+    { image: pr2,
+      answer: 'kształty' },
   ];
 
   const dispatch = useDispatch();
 
   return (
     <TabContainer>
-      <Header>Pytanie i skojarzenia</Header>
-      <Quiz quizId={TAB_B} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_B, '83'))} />
+      <Header>Co to za postać?</Header>
+      <Quiz quizId={TAB_B} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_B, 'Prezencik znajdziesz w mojej szafie, na dolnej z górynych półek'))} />
     </TabContainer>
   );
 };
