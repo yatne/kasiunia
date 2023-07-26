@@ -27,7 +27,7 @@ const TabA = () => {
   return (
     <TabContainer>
       <Header>Różne takie pytania</Header>
-      <Quiz quizId={TAB_A} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_A, '978'))} />
+      <Quiz quizId={TAB_A} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_A, 'Prezencik jest schowany w książce "Hobbit"'))} />
     </TabContainer>
   );
 };

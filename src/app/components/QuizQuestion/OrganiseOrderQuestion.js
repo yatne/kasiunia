@@ -45,7 +45,6 @@ const Simple = styled.div`
   margin: 16px;
   border: 1px solid #E9E9E9;
   border-radius: 4px;
-  width: 294px;
   padding: 5px;
 `;
 

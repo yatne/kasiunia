@@ -41,6 +41,8 @@ import bl2 from '../../../static/img/32/bl2.webp';
 import sa1 from '../../../static/img/32/sa1.webp';
 import pr1 from '../../../static/img/32/pr1.webp';
 import pr2 from '../../../static/img/32/pr2.jpeg';
+import m1 from '../../../static/img/32/m1.webp';
+import m2 from '../../../static/img/32/m2.webp';
 
 const TabA = () => {
   const questions = [
@@ -58,7 +60,7 @@ const TabA = () => {
     { image: b6,
       answer: 'lolita' },
     { image: bu2,
-      answer: 'chilli' },
+      answer: 'chili' },
     { image: bu1,
       answers: ['bandżi', 'bungee'] },
     { image: bu3,
@@ -115,6 +117,10 @@ const TabA = () => {
       answers: ['crusher', 'kraszer'] },
     { image: sa1,
       answer: 'santiago' },
+    { image: m1,
+      answer: 'pat' },
+    { image: m2,
+      answer: 'mat' },
     { image: pr1,
       answer: 'pan robótka' },
     { image: pr2,
@@ -126,7 +132,7 @@ const TabA = () => {
   return (
     <TabContainer>
       <Header>Co to za postać?</Header>
-      <Quiz quizId={TAB_B} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_B, 'Prezencik znajdziesz w mojej szafie, na dolnej z górynych półek'))} />
+      <Quiz quizId={TAB_B} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_B, 'Prezencik znajdziesz w mojej szafie, w koszu na górze'))} />
     </TabContainer>
   );
 };
