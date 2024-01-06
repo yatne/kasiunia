@@ -9,13 +9,13 @@ const ISBNInput = () => {
   return (
     <InputContainer>
       <NumberPart className="tab-a">
-        {isbnParts[TAB_B] ? isbnParts[TAB_B] : 'Tu taki mniejszy trochę prezent'}
+        {isbnParts[TAB_A] ? isbnParts[TAB_A] : ''}
       </NumberPart>
       <NumberPart className="tab-b">
-        {isbnParts[TAB_C] ? isbnParts[TAB_C] : 'Tu taki nie-do-końca prezent co właściwie jest też dla mnie'}
+        {isbnParts[TAB_B] ? isbnParts[TAB_B] : ''}
       </NumberPart>
       <NumberPart className="tab-c">
-        {isbnParts[TAB_A] ? isbnParts[TAB_A] : 'Tu taki prezent co mam nadzieję się nie obrazisz'}
+        {isbnParts[TAB_C] ? isbnParts[TAB_C] : ''}
       </NumberPart>
     </InputContainer>
   );
@@ -25,7 +25,6 @@ const NumberPart = styled.div`
   min-width: 44px;
   text-align: center;
   margin: 0 5px;
-  width: 30%;
   padding: 8px;
 
   &.tab-a {

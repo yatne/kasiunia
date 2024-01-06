@@ -10,10 +10,10 @@ const DesktopOnlyPage = () => {
     <Layaout>
       <Info onClick={() => setCount(count + 1)} left={count * 8}>
         <Header>
-          WSZYSTKIEGO NAJLEPSZEGO KASIA!!
+          WSZYSTKIEGO NAJLEPSZEGO
         </Header>
         <Image src={bukiet} alt="bukiet" />
-        <Text>Niestety do zabawy znowu musisz użyć kompa.</Text>
+        <Text>Niestety do zabawy musisz użyć komputera.</Text>
       </Info>
     </Layaout>
   );

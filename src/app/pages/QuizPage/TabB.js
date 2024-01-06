@@ -132,7 +132,7 @@ const TabA = () => {
   return (
     <TabContainer>
       <Header>Co to za postać?</Header>
-      <Quiz quizId={TAB_B} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_B, 'Prezencik znajdziesz w mojej szafie, w koszu na górze'))} />
+      <Quiz quizId={TAB_B} questions={questions} onQuizFinished={() => dispatch(setIsbnPart(TAB_B, '3'))} />
     </TabContainer>
   );
 };

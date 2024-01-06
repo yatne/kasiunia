@@ -20,9 +20,9 @@ const QuizPage = () => {
   }, []);
 
   const tabs = [
-    { label: 'Co to za postać?', component: TabB, id: TAB_B },
-    { label: 'Memory lane', component: TabC, id: TAB_C },
-    { label: 'Specjalista It', component: TabA, id: TAB_A },
+    { label: 'Runda 1', component: TabA, id: TAB_A },
+    { label: 'Runda 2', component: TabB, id: TAB_B },
+    { label: 'Runda 3', component: TabC, id: TAB_C },
   ];
 
   return (

@@ -7,12 +7,11 @@ import QuizQuestion from '../../components/QuizQuestion/QuizQuestion';
 
 import stolat from '../../../static/img/stolat.png';
 import kwiaty from '../../../static/img/kwiaty.jpeg';
-import kasiakasia from '../../../static/img/kasiakasia.png';
+import mamele from '../../../static/img/mamele.png';
 import ptasiemleczko from '../../../static/img/ptasie-mleczko.png';
-import thirtyTwo from '../../../static/img/32.png';
-import zozole from '../../../static/img/zozole.png';
+import zozole from '../../../static/img/czekolada.jpg';
 import urodziny from '../../../static/audio/urodziny.mp3';
-import kawka from '../../../static/kawka.png';
+import kawka from '../../../static/img/tort.png';
 
 import { unlockGame } from '../../redux/actions';
 import './landingPage.scss';
@@ -69,9 +68,6 @@ const LandingPage = () => {
         <Frame>
           <ImagesWrapper>
             <StolatImage src={stolat} alt="sto lat!" />
-            <ThirtyTwoImage src={thirtyTwo} alt="32" />
-            <SecondThirtyTwoImage src={thirtyTwo} alt="32" />
-            <ThirdThirtyTwoImage src={thirtyTwo} alt="32" />
             <KwiatyImage src={kwiaty} alt="kwaty" />
             <KawkaImage
               src={kawka}
@@ -91,16 +87,16 @@ const LandingPage = () => {
               onClick={setNextKawkaPlace}
             />
             {kawkaPlace === 100 && (
-              <Solution> kurka rurka </Solution>
+              <Solution> kiziu miziu </Solution>
             )}
-            <KasiaKasiaImage src={kasiakasia} alt="uśmiechnięta młoda dziewczyna" />
+            <MameleImage src={mamele} alt="uśmiechnięta młoda dziewczyna" />
             <PtasieMleczkoImage src={ptasiemleczko} alt="ptasie mleczko" />
             <ZozoleImage src={zozole} alt="zozole" />
           </ImagesWrapper>
         </Frame>
       </div>
       <div className={showBelowFold ? 'landing-page-below-fold' : 'display-none'}>
-        <QuizQuestion question="hasło: " onCorrectAnswer={() => dispatch(unlockGame())} answer="kurka rurka" singular />
+        <QuizQuestion question="hasło: " onCorrectAnswer={() => dispatch(unlockGame())} answer="kiziu miziu" singular />
       </div>
     </Layout>
   );
@@ -157,45 +153,6 @@ const StolatImage = styled.img`
   top: 0;
 `;
 
-const ThirtyTwoImage = styled.img`
-  top: 200px;
-  margin-left: -500px;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  z-index: 2;
-  animation-name: crazy-2;
-  animation-duration: 9s;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier();
-`;
-
-const SecondThirtyTwoImage = styled.img`
-  position: absolute;
-  top: 100px;
-  margin-left: 500px;
-  z-index: 2;
-  width: 80px;
-  height: 80px;
-  animation-name: crazy;
-  animation-duration: 9s;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier();
-`;
-
-const ThirdThirtyTwoImage = styled.img`
-  position: absolute;
-  top: 100px;
-  margin-left: 500px;
-  z-index: 2;
-  width: 80px;
-  height: 80px;
-  animation-name: crazy-3;
-  animation-duration: 9s;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier();
-`;
-
 const KwiatyImage = styled.img`
   top: 0;
   height: 1000px;
@@ -206,10 +163,10 @@ const KwiatyImage = styled.img`
   z-index: -2;
 `;
 
-const KasiaKasiaImage = styled.img`
-  width: 485px;
-  margin-top: -544px;
-  margin-left: 600px;
+const MameleImage = styled.img`
+  position: absolute;
+  bottom: -20px;
+  left: 60px;
   animation-name: spin;
   animation-duration: 10000ms;
   animation-iteration-count: infinite;
@@ -218,10 +175,9 @@ const KasiaKasiaImage = styled.img`
 `;
 
 const PtasieMleczkoImage = styled.img`
-  position: absolute;
-  width: 400px;
-  top: 440px;
-  left: 60px;
+  width: 485px;
+  margin-top: -544px;
+  margin-left: 600px;
   animation-name: myOrbit;
   animation-duration: 4000ms;
   animation-iteration-count: infinite;
@@ -241,7 +197,7 @@ const ZozoleImage = styled.img`
 
 const Solution = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   margin-left: 650px;
   z-index: -1;
   color: red;

@@ -6,7 +6,6 @@ import QuizQuestion from '../QuizQuestion/QuizQuestion';
 import FillQuestion from '../QuizQuestion/FillQuestion';
 import AudioQuestion from '../QuizQuestion/AudioQuestion';
 import MultipleChoiceQuestion from '../QuizQuestion/MultipleChoiceQuestion';
-import SuperSlideMeQuestion from '../QuizQuestion/SuperSlideMeQuestion';
 import OrganiseOrderQuestion from '../QuizQuestion/OrganiseOrderQuestion';
 import VideoQuestion from '../QuizQuestion/VideoQuestion';
 
@@ -78,14 +77,6 @@ const Quiz = ({ quizId, questions, onQuizFinished }) => {
               correct={stage > index}
               onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
               tags={question.tags}
-            />
-          );
-        }
-        if (question.type === 'superSlideMe') {
-          return (
-            <SuperSlideMeQuestion
-              onCorrectAnswer={() => handleCorrectAnswer(index + 1)}
-              correct={stage > index}
             />
           );
         }
