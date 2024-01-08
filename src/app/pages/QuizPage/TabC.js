@@ -15,10 +15,12 @@ const TabC = () => {
         { id: 7, content: 'Karpacz', order: 7 },
         { id: 9, content: 'Wiedeń', order: 9 },
         { id: 2, content: 'Rattvik', order: 2 },
+        { id: 12, content: 'Sardynia', order: 12 },
         { id: 1, content: 'Młodów', order: 1 },
         { id: 10, content: 'Albania', order: 10 },
         { id: 6, content: 'Praga', order: 6 },
         { id: 3, content: 'Antwepia', order: 3 },
+        { id: 11, content: 'Budapeszt', order: 11 },
         { id: 5, content: 'Kołobrzeg', order: 5 },
       ] },
   ];

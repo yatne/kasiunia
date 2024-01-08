@@ -8,10 +8,12 @@ import {
   TAB_C,
   TAB_D,
   SET_ISBN_PART,
+  UNLOCK_SSM,
 } from './constants';
 
 const initialState = {
   gameUnlocked: window.localStorage.getItem('gameUnlocked') || false,
+  ssmUnlocked: window.localStorage.getItem('SSMUnlocked') || false,
   secondPartUnlocked: window.localStorage.getItem('secondPartUnlocked') || false,
   selectedTab: TAB_A,
   quizStages: { [TAB_A]: 0,
@@ -29,6 +31,8 @@ export default function appReducer(state = initialState, action) {
   switch (action.type) {
     case UNLOCK_GAME:
       return { ...state, gameUnlocked: true };
+    case UNLOCK_SSM:
+      return { ...state, ssmUnlocked: true };
     case SET_SELECTED_TAB:
       return { ...state,
         selectedTab: action.payload.tab };

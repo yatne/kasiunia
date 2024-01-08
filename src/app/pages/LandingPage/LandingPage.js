@@ -13,7 +13,7 @@ import zozole from '../../../static/img/czekolada.jpg';
 import urodziny from '../../../static/audio/urodziny.mp3';
 import kawka from '../../../static/img/tort.png';
 
-import { unlockGame } from '../../redux/actions';
+import { unlockSSM } from '../../redux/actions';
 import './landingPage.scss';
 
 const kawkaPlaces = [
@@ -59,6 +59,11 @@ const LandingPage = () => {
     }, timeout);
   };
 
+  const handleUnlock = () => {
+    dispatch(unlockSSM());
+    alert('Gierka oblokowana');
+  };
+
   return (
     <Layout>
       <audio className="audio-player" controls autoPlay loop onPlay={() => handlePlay(true)} onPause={() => handlePlay(false)}>
@@ -96,7 +101,7 @@ const LandingPage = () => {
         </Frame>
       </div>
       <div className={showBelowFold ? 'landing-page-below-fold' : 'display-none'}>
-        <QuizQuestion question="hasło: " onCorrectAnswer={() => dispatch(unlockGame())} answer="kiziu miziu" singular />
+        <QuizQuestion question="hasło: " onCorrectAnswer={handleUnlock} answer="kiziu miziu" singular />
       </div>
     </Layout>
   );

@@ -1,4 +1,5 @@
 export const UNLOCK_GAME = 'UNLOCK_GAME';
+export const UNLOCK_SSM = 'UNLOCK_SSM';
 export const SET_SELECTED_TAB = 'SET_SELECTED_TAB';
 export const SET_ANSWER = 'SET_ANSWER';
 export const SET_QUIZ_STAGE = 'SET_QUIZ_STAGE';

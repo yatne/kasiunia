@@ -1,10 +1,15 @@
 import {
-  UNLOCK_GAME, SET_SELECTED_TAB, SET_ANSWER, SET_QUIZ_STAGE, SET_ISBN_PART,
+  UNLOCK_GAME, SET_SELECTED_TAB, SET_ANSWER, SET_QUIZ_STAGE, SET_ISBN_PART, UNLOCK_SSM,
 } from './constants';
 
 export const unlockGame = () => {
   window.localStorage.setItem('gameUnlocked', true);
   return ({ type: UNLOCK_GAME });
+};
+
+export const unlockSSM = () => {
+  window.localStorage.setItem('SSMUnlocked', true);
+  return ({ type: UNLOCK_SSM });
 };
 
 export const setOpenedTab = (tab) => ({ type: SET_SELECTED_TAB,

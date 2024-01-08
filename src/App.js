@@ -12,6 +12,7 @@ import DesktopOnlyPage from './app/pages/DesktopOnlyPage';
 import QuizPage from './app/pages/QuizPage/QuizPage';
 import reducer from './app/redux/reducer';
 import './styles/global.scss';
+import SSMPage from './app/pages/SSMPage/SSMPage';
 
 export default function App() {
   const store = createStore(
@@ -28,6 +29,9 @@ export default function App() {
           <Switch>
             <Route path="/quiz">
               <QuizPage />
+            </Route>
+            <Route path="/gierka">
+              <SSMPage />
             </Route>
             <Route path="/">
               <LandingPage />
