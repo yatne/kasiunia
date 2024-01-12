@@ -14,10 +14,15 @@ const QuizInput = ({
     const newValue = e.target.value;
     const isNumbersOnly = /^[0-9,.]*$/.test(newValue);
 
+    console.log({ answers,
+      newValue,
+      wyn: (answer && newValue.toLowerCase() === answer.toLowerCase())
+        || answers.includes(newValue.toLowerCase()) });
+
     if (isNumbersOnly || !onlyNumbers) {
       dispatch(setAnswer(questionId, newValue));
       if ((answer && newValue.toLowerCase() === answer.toLowerCase())
-        || answers.includes(newValue.toLowerCase())) {
+        || answers.map((ans) => ans.toLowerCase()).includes(newValue.toLowerCase())) {
         onCorrectAnswer(newValue);
       }
     }
